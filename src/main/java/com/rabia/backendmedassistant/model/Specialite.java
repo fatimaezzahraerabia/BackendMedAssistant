@@ -12,6 +12,9 @@ public class Specialite {
 
     private String nom;
 
+    @OneToMany(mappedBy = "specialite")
+    private List<Medecin> medecins;
+
     // To maintain the ManyToMany relationship from Medecin side,
     // we might need to manage the owning side or use mappedBy.
     // For now, let's just define the basic entity.
@@ -35,5 +38,13 @@ public class Specialite {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public List<Medecin> getMedecins() {
+        return medecins;
+    }
+
+    public void setMedecins(List<Medecin> medecins) {
+        this.medecins = medecins;
     }
 }
