@@ -1,5 +1,6 @@
 package com.rabia.backendmedassistant.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
@@ -17,6 +18,9 @@ public class Medecin {
 
     @Column(nullable = false)
     private String prenom;
+    @Column(nullable = false)
+    private String email;
+
 
     @Column(name = "adresse_professionnelle")
     private String adresseCabinet;
@@ -25,7 +29,11 @@ public class Medecin {
     private Double lng;
     private String bio;
     @ManyToOne
+    @JsonManagedReference
     private Specialite specialite;
+
+    @Column(nullable=false)
+    private String motDePasse;
 
 
     @ElementCollection
@@ -66,4 +74,28 @@ public class Medecin {
 
     public Map<LocalDate, List<String>> getDisponibilites() { return disponibilites; }
     public void setDisponibilites(Map<LocalDate, List<String>> disponibilites) { this.disponibilites = disponibilites; }
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    }
+
+    public void setLatitude(double lat) {
+        this.lat = lat;
+    }
+
+    public void setLongitude(double lng) {
+        this.lng = lng;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

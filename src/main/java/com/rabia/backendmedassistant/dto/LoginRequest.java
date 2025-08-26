@@ -1,4 +1,4 @@
-package com.rabia.backendmedassistant.controller;
+package com.rabia.backendmedassistant.dto;
 
 public class LoginRequest {
     private String email;

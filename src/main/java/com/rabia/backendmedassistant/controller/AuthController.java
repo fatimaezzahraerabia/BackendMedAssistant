@@ -1,5 +1,6 @@
 package com.rabia.backendmedassistant.controller;
 
+import com.rabia.backendmedassistant.dto.LoginRequest;
 import com.rabia.backendmedassistant.model.Utilisateur;
 import com.rabia.backendmedassistant.repository.UtilisateurRepository;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import com.rabia.backendmedassistant.model.Role; // Ajouter cet import
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AuthController {
 
     private final AuthenticationManager authManager;
