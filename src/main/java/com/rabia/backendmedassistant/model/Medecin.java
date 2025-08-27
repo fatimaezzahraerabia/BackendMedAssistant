@@ -2,6 +2,7 @@ package com.rabia.backendmedassistant.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -21,6 +22,9 @@ public class Medecin {
 
     @Column(nullable = false)
     private String prenom;
+    @Column(nullable = false)
+    private String email;
+
 
     @Column(name = "adresse_professionnelle")
     private String adresseCabinet;
@@ -33,7 +37,11 @@ public class Medecin {
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnoreProperties("medecins")
 
+
     private Specialite specialite;
+
+    @Column(nullable=false)
+    private String motDePasse;
 
 
     @ElementCollection
@@ -124,5 +132,21 @@ public class Medecin {
 
     public void setDisponibilites(Map<LocalDate, List<String>> disponibilites) {
         this.disponibilites = disponibilites;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
     }
 }

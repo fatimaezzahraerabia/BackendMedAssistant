@@ -1,7 +1,7 @@
 package com.rabia.backendmedassistant.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -20,6 +20,7 @@ public class Specialite {
 //    private List<Medecin> medecins;
     @OneToMany(mappedBy = "specialite")
     @JsonIgnoreProperties("specialite")
+
     private List<Medecin> medecins;
 
 
