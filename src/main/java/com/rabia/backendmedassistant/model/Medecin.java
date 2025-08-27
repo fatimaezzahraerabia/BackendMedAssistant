@@ -1,9 +1,13 @@
 package com.rabia.backendmedassistant.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
+
 
 @Entity
 public class Medecin {
@@ -24,7 +28,11 @@ public class Medecin {
     private Double lat;
     private Double lng;
     private String bio;
-    @ManyToOne
+    //    @ManyToOne
+//    @JsonBackReference
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("medecins")
+
     private Specialite specialite;
 
 
@@ -34,27 +42,73 @@ public class Medecin {
     @Column(name = "disponibilite_horaires")
     private Map<LocalDate, List<String>> disponibilites;
 
+    @Transient
+    private Double distance; // km calculée à la volée
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+
     // Getters & Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getNom() { return nom; }
-    public void setNom(String nom) { this.nom = nom; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getPrenom() { return prenom; }
-    public void setPrenom(String prenom) { this.prenom = prenom; }
+    public String getNom() {
+        return nom;
+    }
 
-    public String getAdresseCabinet() { return adresseCabinet; }
-    public void setAdresseCabinet(String adresseCabinet) { this.adresseCabinet = adresseCabinet; }
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-    public Double getLat() { return lat; }
-    public void setLat(Double lat) { this.lat = lat; }
+    public String getPrenom() {
+        return prenom;
+    }
 
-    public Double getLng() { return lng; }
-    public void setLng(Double lng) { this.lng = lng; }
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
 
-    public String getBio() { return bio; }
-    public void setBio(String bio) { this.bio = bio; }
+    public String getAdresseCabinet() {
+        return adresseCabinet;
+    }
+
+    public void setAdresseCabinet(String adresseCabinet) {
+        this.adresseCabinet = adresseCabinet;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLng() {
+        return lng;
+    }
+
+    public void setLng(Double lng) {
+        this.lng = lng;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
 
     public Specialite getSpecialite() {
         return specialite;
@@ -64,6 +118,11 @@ public class Medecin {
         this.specialite = specialite;
     }
 
-    public Map<LocalDate, List<String>> getDisponibilites() { return disponibilites; }
-    public void setDisponibilites(Map<LocalDate, List<String>> disponibilites) { this.disponibilites = disponibilites; }
+    public Map<LocalDate, List<String>> getDisponibilites() {
+        return disponibilites;
+    }
+
+    public void setDisponibilites(Map<LocalDate, List<String>> disponibilites) {
+        this.disponibilites = disponibilites;
+    }
 }

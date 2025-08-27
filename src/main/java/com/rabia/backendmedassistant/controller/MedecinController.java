@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/medecins")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MedecinController {
 
     private final MedecinService medecinService;
@@ -20,26 +21,31 @@ public class MedecinController {
         this.medecinService = medecinService;
     }
 
-   
+    @GetMapping("/nearest")
+    public List<Medecin> getNearest(
+            @RequestParam double lat,
+            @RequestParam double lng,
+            @RequestParam(required = false) String query,
+            @RequestParam(defaultValue = "10") int limit,
+            @RequestParam(defaultValue = "50") double radius) {
+        return medecinService.findNearest(lat, lng, query, limit, radius);
+    }
+
     @PostMapping
     public ResponseEntity<Medecin> addMedecin(@RequestBody Medecin medecin) {
         Medecin savedMedecin = medecinService.saveMedecin(medecin);
         return new ResponseEntity<>(savedMedecin, HttpStatus.CREATED);
     }
 
-   
     @GetMapping
-    public ResponseEntity<List<Medecin>> getAllMedecins() {
-        List<Medecin> medecins = medecinService.getAllMedecins();
-        return new ResponseEntity<>(medecins, HttpStatus.OK);
+    public List<Medecin> getAllMedecins() {
+        return medecinService.getAll();
     }
 
-    
     @GetMapping("/{id}")
     public ResponseEntity<Medecin> getMedecinById(@PathVariable Long id) {
         return medecinService.getMedecinById(id)
                 .map(medecin -> new ResponseEntity<>(medecin, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
-
 }
