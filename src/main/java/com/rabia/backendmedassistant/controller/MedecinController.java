@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/medecins")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MedecinController {
 
     private final MedecinService medecinService;
@@ -27,29 +28,36 @@ public class MedecinController {
         this.medecinService = medecinService;
     }
 
+    @GetMapping("/nearest")
+    public List<Medecin> getNearest(
+            @RequestParam double lat,
+            @RequestParam double lng,
+            @RequestParam(required = false) String query,
+            @RequestParam(defaultValue = "10") int limit,
+            @RequestParam(defaultValue = "50") double radius) {
+        return medecinService.findNearest(lat, lng, query, limit, radius);
+    }
 
+    @PostMapping
     public Medecin addMedecin(@RequestBody Medecin medecin) {
         if (medecin.getAdresseCabinet() != null) {
             double[] coords = geocodingService.geocode(medecin.getAdresseCabinet());
-            medecin.setLatitude(coords[0]);
-            medecin.setLongitude(coords[1]);
+            medecin.setLat(coords[0]);
+            medecin.setLng(coords[1]);
         }
         return medecinRepository.save(medecin);
     }
 
 
     @GetMapping
-    public ResponseEntity<List<Medecin>> getAllMedecins() {
-        List<Medecin> medecins = medecinService.getAllMedecins();
-        return new ResponseEntity<>(medecins, HttpStatus.OK);
+    public List<Medecin> getAllMedecins() {
+        return medecinService.getAll();
     }
 
-    
     @GetMapping("/{id}")
     public ResponseEntity<Medecin> getMedecinById(@PathVariable Long id) {
         return medecinService.getMedecinById(id)
                 .map(medecin -> new ResponseEntity<>(medecin, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
-
 }

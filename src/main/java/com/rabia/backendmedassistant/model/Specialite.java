@@ -1,7 +1,9 @@
 package com.rabia.backendmedassistant.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -13,9 +15,14 @@ public class Specialite {
 
     private String nom;
 
+    //    @OneToMany(mappedBy = "specialite")
+//    @JsonManagedReference
+//    private List<Medecin> medecins;
     @OneToMany(mappedBy = "specialite")
-    @JsonBackReference
+    @JsonIgnoreProperties("specialite")
+
     private List<Medecin> medecins;
+
 
     // To maintain the ManyToMany relationship from Medecin side,
     // we might need to manage the owning side or use mappedBy.
