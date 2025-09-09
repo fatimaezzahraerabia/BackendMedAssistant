@@ -1,6 +1,5 @@
 package com.rabia.backendmedassistant.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
@@ -36,13 +35,14 @@ public class Medecin {
 //    @JsonBackReference
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnoreProperties("medecins")
-
-
     private Specialite specialite;
 
     @Column(nullable=false)
     private String motDePasse;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ville_id", nullable = false)
+    private Ville ville;
 
     @ElementCollection
     @CollectionTable(name = "medecin_disponibilites", joinColumns = @JoinColumn(name = "medecin_id"))
@@ -51,7 +51,28 @@ public class Medecin {
     private Map<LocalDate, List<String>> disponibilites;
 
     @Transient
-    private Double distance; // km calculée à la volée
+    private Double distance;
+
+    private String drivingDuration; // minutes (converties depuis secondes)
+    private String walkingDuration; // minutes
+
+
+
+    public String getDrivingDuration() {
+        return drivingDuration;
+    }
+
+    public void setDrivingDuration(String drivingDuration) {
+        this.drivingDuration = drivingDuration;
+    }
+
+    public String getWalkingDuration() {
+        return walkingDuration;
+    }
+
+    public void setWalkingDuration(String walkingDuration) {
+        this.walkingDuration = walkingDuration;
+    }
 
     public Double getDistance() {
         return distance;
@@ -148,5 +169,13 @@ public class Medecin {
 
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
+    }
+
+    public Ville getVille() {
+        return ville;
+    }
+
+    public void setVille(Ville ville) {
+        this.ville = ville;
     }
 }
