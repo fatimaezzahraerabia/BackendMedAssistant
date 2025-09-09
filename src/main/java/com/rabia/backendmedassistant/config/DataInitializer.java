@@ -3,8 +3,11 @@ package com.rabia.backendmedassistant.config;
 import com.opencsv.CSVReader;
 import com.rabia.backendmedassistant.model.Medecin;
 import com.rabia.backendmedassistant.model.Specialite;
+import com.rabia.backendmedassistant.model.Ville;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
 import com.rabia.backendmedassistant.repository.SpecialiteRepository;
+import com.rabia.backendmedassistant.repository.VilleRepository;
+import com.rabia.backendmedassistant.service.GeocodingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -18,75 +21,95 @@ public class DataInitializer implements CommandLineRunner {
 
     private final MedecinRepository medecinRepository;
     private final SpecialiteRepository specialiteRepository;
+    private final VilleRepository villeRepository; // 🔹 Ajouter ce repo
+    private final GeocodingService geocodingService; // 🔹 Utiliser Nominatim
+    private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
     int counter = 1; // compteur global
 
 
     @Autowired
-    public DataInitializer(MedecinRepository medecinRepository, SpecialiteRepository specialiteRepository) {
+    public DataInitializer(MedecinRepository medecinRepository, SpecialiteRepository specialiteRepository, VilleRepository villeRepository, GeocodingService geocodingService) {
         this.medecinRepository = medecinRepository;
         this.specialiteRepository = specialiteRepository;
+        this.villeRepository = villeRepository;
+        this.geocodingService = geocodingService;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
-        try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
-            String[] line;
-            boolean isHeader = true;
-
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
-            while ((line = reader.readNext()) != null) {
-                if (isHeader) { // ignorer l'entête
-                    isHeader = false;
-                    continue;
-                }
-
-                String nom = line[0].trim();
-                String prenom = line[1].trim();
-                String specialiteNom = line[2].trim();
-                String adresse = line[3].trim();
-
-                Double lat = null;
-                Double lng = null;
-                try {
-                    lat = Double.parseDouble(line[4]);
-                    lng = Double.parseDouble(line[5]);
-                } catch (NumberFormatException e) {
-                    System.out.println("⚠ Coordonnées invalides pour " + nom + " " + prenom);
-                }
-
-                // Vérifier si la spécialité existe déjà
-                Specialite sp = specialiteRepository.findByNom(specialiteNom);
-                if (sp == null) {
-                    sp = new Specialite();
-                    sp.setNom(specialiteNom);
-                    specialiteRepository.save(sp);
-                }
-
-                Medecin medecin = new Medecin();
-                medecin.setNom(nom);
-                medecin.setPrenom(prenom);
-                medecin.setAdresseCabinet(adresse);
-                medecin.setLat(lat);
-                medecin.setLng(lng);
-                medecin.setSpecialite(sp);
-                String email = "med" + counter + "@gmail.com";
-                medecin.setEmail(email);
-                counter++;
-                // Générer mot de passe par défaut hashé
-                String motDePasseClair = "password123";
-                medecin.setMotDePasse(encoder.encode(motDePasseClair)); // ✅ hash bcrypt
-                String motDePasseHash = encoder.encode(motDePasseClair);
-                medecin.setMotDePasse(motDePasseHash);
-                System.out.println("Mot de passe hashé : " + motDePasseHash);
-
-                medecinRepository.save(medecin);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
+//        try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
+//            String[] line;
+//            boolean isHeader = true;
+//
+//            while ((line = reader.readNext()) != null) {
+//                if (isHeader) {
+//                    isHeader = false;
+//                    continue;
+//                }
+//
+//                String nom = line[0].trim();
+//                String prenom = line[1].trim();
+//                String specialiteNom = line[2].trim();
+//                String adresse = line[3].trim();
+//                String villeNom = line[6].trim();
+//
+//                Double lat = null;
+//                Double lng = null;
+//                try {
+//                    lat = Double.parseDouble(line[4]);
+//                    lng = Double.parseDouble(line[5]);
+//                } catch (NumberFormatException e) {
+//                    System.out.println("⚠ Coordonnées invalides pour " + nom + " " + prenom);
+//                }
+//
+//                // 🔹 Gérer la ville
+//                Ville ville = villeRepository.findByNom(villeNom);
+//                if (ville == null) {
+//                    ville = new Ville();
+//                    ville.setNom(villeNom);
+//
+//                    // 🔹 Géocodage ville via Nominatim
+//                    double[] coords = geocodingService.geocode(villeNom);
+//                    ville.setLat(coords[0]);
+//                    ville.setLng(coords[1]);
+//
+//                    villeRepository.save(ville);
+//                    System.out.println("✅ Ville ajoutée : " + villeNom + " (" + coords[0] + ", " + coords[1] + ")");
+//                }
+//
+//                // 🔹 Gérer la spécialité
+//                Specialite sp = specialiteRepository.findByNom(specialiteNom);
+//                if (sp == null) {
+//                    sp = new Specialite();
+//                    sp.setNom(specialiteNom);
+//                    specialiteRepository.save(sp);
+//                }
+//
+//                // 🔹 Créer le médecin
+//                Medecin medecin = new Medecin();
+//                medecin.setNom(nom);
+//                medecin.setPrenom(prenom);
+//                medecin.setAdresseCabinet(adresse);
+//                medecin.setLat(lat);
+//                medecin.setLng(lng);
+//                medecin.setSpecialite(sp);
+//                medecin.setVille(ville);
+//
+//                String email = "med" + counter + "@gmail.com";
+//                medecin.setEmail(email);
+//                counter++;
+//
+//                // 🔹 Mot de passe hashé
+//                String motDePasseHash = encoder.encode("password123");
+//                medecin.setMotDePasse(motDePasseHash);
+//
+//                medecinRepository.save(medecin);
+//                System.out.println("✅ Médecin ajouté : " + nom + " " + prenom);
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }

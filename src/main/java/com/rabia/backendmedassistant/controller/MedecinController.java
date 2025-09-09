@@ -1,6 +1,7 @@
 package com.rabia.backendmedassistant.controller;
 
 import com.rabia.backendmedassistant.model.Medecin;
+import com.rabia.backendmedassistant.model.Ville;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
 import com.rabia.backendmedassistant.service.GeocodingService;
 import com.rabia.backendmedassistant.service.MedecinService;
@@ -48,6 +49,10 @@ public class MedecinController {
         return medecinRepository.save(medecin);
     }
 
+    @GetMapping("/cities")
+    public List<Ville> getCities() {
+        return medecinService.getCities();
+    }
 
     @GetMapping
     public List<Medecin> getAllMedecins() {
