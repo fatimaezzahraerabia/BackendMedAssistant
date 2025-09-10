@@ -2,9 +2,12 @@ package com.rabia.backendmedassistant.config;
 
 import com.opencsv.CSVReader;
 import com.rabia.backendmedassistant.model.Medecin;
+import com.rabia.backendmedassistant.model.Role;
 import com.rabia.backendmedassistant.model.Specialite;
+import com.rabia.backendmedassistant.model.Utilisateur;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
 import com.rabia.backendmedassistant.repository.SpecialiteRepository;
+import com.rabia.backendmedassistant.repository.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -17,27 +20,29 @@ import java.util.List;
 public class DataInitializer implements CommandLineRunner {
 
     private final MedecinRepository medecinRepository;
+    private final UtilisateurRepository utilisateurRepository;
+
     private final SpecialiteRepository specialiteRepository;
     int counter = 1; // compteur global
 
-
     @Autowired
-    public DataInitializer(MedecinRepository medecinRepository, SpecialiteRepository specialiteRepository) {
+    public DataInitializer(MedecinRepository medecinRepository, UtilisateurRepository utilisateurRepository, SpecialiteRepository specialiteRepository) {
         this.medecinRepository = medecinRepository;
+        this.utilisateurRepository = utilisateurRepository;
         this.specialiteRepository = specialiteRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
-        try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
+    /*    try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
             String[] line;
             boolean isHeader = true;
-
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
+
             while ((line = reader.readNext()) != null) {
-                if (isHeader) { // ignorer l'entête
+                if (isHeader) {
                     isHeader = false;
                     continue;
                 }
@@ -56,7 +61,7 @@ public class DataInitializer implements CommandLineRunner {
                     System.out.println("⚠ Coordonnées invalides pour " + nom + " " + prenom);
                 }
 
-                // Vérifier si la spécialité existe déjà
+                // Vérifier ou créer la spécialité
                 Specialite sp = specialiteRepository.findByNom(specialiteNom);
                 if (sp == null) {
                     sp = new Specialite();
@@ -64,6 +69,16 @@ public class DataInitializer implements CommandLineRunner {
                     specialiteRepository.save(sp);
                 }
 
+                // Création utilisateur
+                String email = "med" + counter + "@gmail.com";
+                String motDePasseClair = "password123";
+                Utilisateur utilisateur = new Utilisateur();
+                utilisateur.setEmail(email);
+                utilisateur.setMotDePasse(encoder.encode(motDePasseClair));
+                utilisateur.setRole(Role.MEDECIN);
+                utilisateurRepository.save(utilisateur);
+
+                // Création médecin
                 Medecin medecin = new Medecin();
                 medecin.setNom(nom);
                 medecin.setPrenom(prenom);
@@ -71,22 +86,17 @@ public class DataInitializer implements CommandLineRunner {
                 medecin.setLat(lat);
                 medecin.setLng(lng);
                 medecin.setSpecialite(sp);
-                String email = "med" + counter + "@gmail.com";
-                medecin.setEmail(email);
-                counter++;
-                // Générer mot de passe par défaut hashé
-                String motDePasseClair = "password123";
-                medecin.setMotDePasse(encoder.encode(motDePasseClair)); // ✅ hash bcrypt
-                String motDePasseHash = encoder.encode(motDePasseClair);
-                medecin.setMotDePasse(motDePasseHash);
-                System.out.println("Mot de passe hashé : " + motDePasseHash);
+                medecin.setUtilisateur(utilisateur); // 🔗 lien avec utilisateur
 
                 medecinRepository.save(medecin);
+
+                System.out.println("✅ Médecin " + nom + " créé avec email: " + email + " / mot de passe: " + motDePasseClair);
+
+                counter++;
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
-
+        } */
 
     }
 }

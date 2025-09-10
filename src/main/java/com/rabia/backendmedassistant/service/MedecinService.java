@@ -1,9 +1,13 @@
 package com.rabia.backendmedassistant.service;
 
 import com.rabia.backendmedassistant.model.Medecin;
+import com.rabia.backendmedassistant.model.Role;
+import com.rabia.backendmedassistant.model.Utilisateur;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
+import com.rabia.backendmedassistant.repository.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.Comparator;
 import java.util.List;
@@ -18,13 +22,23 @@ import java.text.Normalizer;
 public class MedecinService {
 
     private final MedecinRepository medecinRepository;
-    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private final UtilisateurRepository utilisateurRepository;
+    private final PasswordEncoder passwordEncoder;
+    @Autowired
 
+    public MedecinService(MedecinRepository medecinRepository,
+                          UtilisateurRepository utilisateurRepository,
+                          PasswordEncoder passwordEncoder) {
+        this.medecinRepository = medecinRepository;
+        this.utilisateurRepository = utilisateurRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Autowired
-    public MedecinService(MedecinRepository medecinRepository) {
-        this.medecinRepository = medecinRepository;
-    }
+    private GeocodingService geocodingService;
+
+
+
 
     public List<Medecin> findNearest(double lat, double lng, String query, int limit, double radius) {
         List<Medecin> allMedecins = medecinRepository.findAll();
@@ -115,8 +129,22 @@ public class MedecinService {
         String encodedPassword = passwordEncoder.encode(rawPassword);
 
         // Sauvegarder dans l’entité
-        medecin.setMotDePasse(encodedPassword);
 
+        return medecinRepository.save(medecin);
+    }
+
+    public Medecin addMedecin(Medecin medecin) {
+        if (medecin.getUtilisateur() == null) {
+            throw new IllegalArgumentException("Un médecin doit avoir un compte utilisateur associé.");
+        }
+
+        Utilisateur utilisateur = medecin.getUtilisateur();
+        utilisateur.setRole(Role.MEDECIN);
+        utilisateur.setMotDePasse(passwordEncoder.encode(utilisateur.getMotDePasse()));
+
+        Utilisateur savedUser = utilisateurRepository.save(utilisateur);
+
+        medecin.setUtilisateur(savedUser);
         return medecinRepository.save(medecin);
     }
     private String generateRandomPassword() {
@@ -131,4 +159,6 @@ public class MedecinService {
     public Optional<Medecin> getMedecinById(Long id) {
         return medecinRepository.findById(id);
     }
+
+
 }

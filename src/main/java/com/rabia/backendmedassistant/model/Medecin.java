@@ -22,8 +22,6 @@ public class Medecin {
 
     @Column(nullable = false)
     private String prenom;
-    @Column(nullable = false)
-    private String email;
 
 
     @Column(name = "adresse_professionnelle")
@@ -40,8 +38,8 @@ public class Medecin {
 
     private Specialite specialite;
 
-    @Column(nullable=false)
-    private String motDePasse;
+
+
 
 
     @ElementCollection
@@ -49,10 +47,57 @@ public class Medecin {
     @MapKeyColumn(name = "disponibilite_date")
     @Column(name = "disponibilite_horaires")
     private Map<LocalDate, List<String>> disponibilites;
+    @OneToOne
+    @JoinColumn(name = "utilisateur_id")
+    private Utilisateur utilisateur; //
 
     @Transient
     private Double distance; // km calculée à la volée
 
+    public List<String> getDiplomes() {
+        return diplomes;
+    }
+
+    public void setDiplomes(List<String> diplomes) {
+        this.diplomes = diplomes;
+    }
+
+    public List<String> getLanguesParlees() {
+        return languesParlees;
+    }
+
+    public void setLanguesParlees(List<String> languesParlees) {
+        this.languesParlees = languesParlees;
+    }
+
+    public Integer getAnneesExperience() {
+        return anneesExperience;
+    }
+
+    public void setAnneesExperience(Integer anneesExperience) {
+        this.anneesExperience = anneesExperience;
+    }
+
+    public Double getTarifConsultation() {
+        return tarifConsultation;
+    }
+
+    public void setTarifConsultation(Double tarifConsultation) {
+        this.tarifConsultation = tarifConsultation;
+    }
+
+    @ElementCollection
+    @CollectionTable(name = "medecin_diplomes", joinColumns = @JoinColumn(name = "medecin_id"))
+    @Column(name = "diplome")
+    private List<String> diplomes;
+
+    @ElementCollection
+    @CollectionTable(name = "medecin_langues", joinColumns = @JoinColumn(name = "medecin_id"))
+    @Column(name = "langue")
+    private List<String> languesParlees;
+
+    private Integer anneesExperience;
+    private Double tarifConsultation;
     public Double getDistance() {
         return distance;
     }
@@ -134,19 +179,14 @@ public class Medecin {
         this.disponibilites = disponibilites;
     }
 
-    public String getEmail() {
-        return email;
+
+    public void setUtilisateur(Utilisateur savedUser) {
+        this.utilisateur=savedUser;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
-    public String getMotDePasse() {
-        return motDePasse;
-    }
 
-    public void setMotDePasse(String motDePasse) {
-        this.motDePasse = motDePasse;
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
     }
 }
