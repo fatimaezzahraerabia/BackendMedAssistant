@@ -1,370 +1,343 @@
-﻿nom,prenom,specialite,adresse professionnelle,latitude,longitude
-Kimakh,Naima,Anesthésiste,Clinique Agadir des Spécialités AGADIR,30.4205162,-9.5838532
-Lyassami,Abdelilah,Anesthésiste,Clinique des Spécialités AGADIR,51.9805902,4.2445744
-Benjelloun,El mostafa,Cardiologue,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599
-Youbi idrissi,Youssef,Chirurgien généraliste,Polyclinique du souss Av. Abderrahim Bouabid AGADIR,30.4130771,-9.5728377
-Chigr,Hassan,Gynécologue obstétricien,"7, Rue de Marrakech AGADIR",30.4310257,-9.5986067
-Atlab,Nor-essaid,Médecin généraliste,"40, Av.Jamal Abdennacer Massira AGADIR",30.4125269,-9.5682978
-Bensalem,Abdeljebbar,Médecin généraliste,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599
-Bouchiba,Mohamed faouzi,Médecin généraliste,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599
-Boutti,Abdellah,Médecin généraliste,EN COURS AGADIR,33.5353339,-7.5815599
-El grar,Najia (jamila),Médecin généraliste,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599
-El nabhani,Loubna,Médecin généraliste,(EN COURS) AGADIR,51.9805902,4.2445744
-Haib,Khalid,Médecin généraliste,Centre Tamri AGADIR,30.6966311,-9.8250377
-Hakam,Khalid,Médecin généraliste,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599
-Mesdady,Saida,Médecin généraliste,29 Février Talborjt AGADIR,30.4226546,-9.5926483
-Ohayon,Maurice,Médecin généraliste,Appt.13 Hay Riad (5 Rue Madrid) AGADIR,34.9243469,-2.3059319
-Sadak,Abdelaziz,Médecin généraliste,n°115 Extension X AGADIR,33.579103,-7.641645
-Naciri,Lahcen,Interniste,EN COURS AGADIR,33.5353339,-7.5815599
-Aboulazhar,Idriss,Ophtalmologue,"51bis, Av.29 Février Talborjt AGADIR",30.4226546,-9.5926483
-Ben mahfoud,Jawad,Ophtalmologue,NE COURS AGADIR,34.0389993,-5.0131389
-Boufdil,Mohamed,Ophtalmologue,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599
-Tadlaoui ouafi,Abdelilah,Orthopédiste traumatologue,Av.29 Février n°14 Talborjt AGADIR,30.4226546,-9.5926483
-Assakoum,Ahmed,ORL,"231, Rue Marrakech AGADIR",35.1772049,-2.926723
-Dissani,Abderrahim,ORL,255 Avenue Hassan II AGADIR,33.991248,-6.8663216
-El mortaji,El hassan,Gastro-entérologue,N° 59 RUE MARRAKECH QUARTIER INDUSTRIEL AGADIR,30.4310257,-9.5986067
-Taleb,Mohamed,Gastro-entérologue,Rue Hôtel de Ville AGADIR,48.8565175,2.3639179
-Jacob albert,Joseph loui,Pédiatre,"45 Av.Kennedy, Talborjt AGADIR",30.4204429,-9.591991
-Nbou,Abdesselam,Pédiatre,"45, Av.Kennedy Talborjt AGADIR",30.4204429,-9.591991
-Temstet,Raphael,Pédiatre,"25, Place du Souss AGADIR",29.7203925,-8.9731103
-El alaoui benchad,My youssef,Pneumologue,"2, Rue Ifni, Talborjt AGADIR",30.4224281,-9.5959446
-Ezzine,Abdeljabar,Psychiatre,Av. Moulay Abdellah AGADIR,35.180439,-2.9229021
-Belkebir mrani,Abderrahmane,Rhumatologue,"102, Av.Kennedy - Talborjt AGADIR",30.4234549,-9.5959417
-Morchid,Abderrahmane,Urologue,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599
-Id hammouche,Rachid,Médecin généraliste,hay essalam AGADIR-IDA OU TANANE,33.5724212,-7.6578406
-Arkoub,Mohamed,Médecin généraliste,Centre AGOURAI AGOURAI,33.643846,-5.589918
-El bahja,Nouredine,Médecin généraliste,Centre AGOURAI AGOURAI,33.643846,-5.589918
-Ouriemchi,Aicha,Médecin généraliste,N° 6 RUE ALLAL BEN ABDELLAH AHFIR,33.5960957,-7.6158679
-Sany,Abdellatif,Médecin généraliste,AIN AOUDA Centre AIN AOUDA,33.803077,-6.79413
-Mabrouk,Rabha,Médecin généraliste,AIN ATTIG Centre AIN ATTIQ,33.8898576,-6.9678655
-Banana,Abdelkrim,Médecin généraliste,"24,Bd.Isly AIN BNI MATHAR",34.6846133,-1.9638433
-Douhi,Mohamed,Médecin généraliste,"2, Rue Figuig AIN BNI MATHAR",35.1717767,-2.9295908
-El hassani,Omar,Médecin généraliste,AL HAY AL JADID N°922 AIN EL AOUDA,30.3467769,-9.497595
-Zekraoui,Driss,Médecin généraliste,"34, AVENUE HASSAN II AIN LEUH",35.7825789,-5.8179886
-Rhazale,Mohamed,Médecin généraliste,Diour Jdad AIN TAOUJDATE,33.8878423,-5.5528646
-Sahibi,Abdelaziz,Médecin généraliste,Avenue Mohamed V AIT BAHA,34.0254711,-6.8398656
-Ghanimi,Aicha,Médecin généraliste,"Km 1, Rte.Biougra AIT MELLOUL",30.1990071,-9.2239774
-Debbagh,Mohamed youssef,Médecin généraliste,Cercle AIT OURIR AIT OURIR,31.5003881,-7.7381094
-Qaceme,Rahal,Médecin généraliste,AIT OURIR AIT OURIR,31.563898,-7.662276
-Oubella,Layachi,Médecin généraliste,Centre AIT YADINE AIT YADINE,33.9704133,-6.0175027
-Yacoubi el bouderraoui,Rajaa,Médecin généraliste,"301, bloc 4 AKLIM",33.561023,-7.5707408
-Yahyaoui,Loukili,Médecin généraliste,Centre  AKLIM AKLIM,34.886741,-2.518554
-Es-sadki,Belkheir,Médecin généraliste,"103, Bd.El Mir AL ARRUIT",34.67909,-1.921981
-Chouata,Boubker,Médecin généraliste,AL HAOUZ AL HAOUZ,31.2806715,-7.9251771
-El mostakim,Mohamed,Médecin généraliste,Centre AIT OURIR AL HAOUZ,31.563898,-7.662276
-Dira,Mohamed,Cardiologue,"112, Bd Mohamed V AL HOCEIMA",35.1800319,-2.9251802
-Lachkar,M'hamed,Chirurgien généraliste,30 Bd. Mohamed V (Clinique) AL HOCEIMA,35.5702082,-5.3732833
-Benkaddour,Mohamed,Gynécologue obstétricien,"7, Rue Abdellah Hammou AL HOCEIMA",34.6637067,-1.9335672
-El hankouri,Mekki,Gynécologue obstétricien,97 Av. Mohamed V AL HOCEIMA,34.011815,-6.8302259
-Alami,Mohamed rachid,Médecin généraliste,"139, Bd.Abdelkrim El Khattabi AL HOCEIMA",33.5829484,-7.6598871
-Bourgila,Abdelkhalek,Médecin généraliste,55 Av. Abdelkrim Khattabi AL HOCEIMA,34.0254772,-6.8457592
-El ouardani,Ahmed,Médecin généraliste,97 Bd. Mohamed V AL HOCEIMA,35.1800319,-2.9251802
-Ouyahya,Fouad,Médecin généraliste,48 Bd Hassan II AL HOCEIMA,30.4100832,-9.5896587
-Afkir,Abdelbaki,Néphrologue,HOPITAL MOHAMED V AL HOCEIMA,35.1684934,-5.2712446
-Azizi,Salah,ORL,"12, Rue de Tétouan AL HOCEIMA",33.5986614,-7.6152828
-El farricha najib,Asmaa,ORL,10 Bd.Abdelkrim Khattabi AL HOCEIMA,34.0884643,-6.7844882
-Bouia,Abdelmajid,Médecin généraliste,Av.Hassan II AOULOUZ,33.9741922,-6.8788972
-El khamlichi,Jamal-eddine,Médecin généraliste,"37, AV.ALLAL BEN ABDELLAH AREKMANE",34.0213864,-6.8363604
-Lemallam,Hassan,Médecin généraliste,Centre AREKMANE AREKMANE,35.0597938,-2.7040619
-Ismaili alaoui,Abdelaziz,Médecin généraliste,"17, RUE CHENGUIT ARFOUD",33.7013109,-7.3912628
-Lamjimer,Fatiha,Médecin généraliste,n°11 Rue Al Masjid ARFOUD,33.9984318,-6.8683394
-Sabbar,Lahoussine,Médecin généraliste,ASNI ASNI,31.2496355,-7.980004
-Benmalek,Ahmed,Médecin généraliste,"2, Av. Hassan II ASSILAH",34.0200729,-6.8422579
-Haddouche,Hayet,Médecin généraliste,"Bd.Hassan II, BP.5 ASSILAH",30.4100832,-9.5896587
-Lysenko serghini,Irina,Médecin généraliste,227 Av. Hassan II ASSILAH,33.991248,-6.8663216
-Serghini,Saad,Médecin généraliste,"21, Rue de la Liberté ASSILAH",31.6356373,-8.0114897
-Benjelloun,Fadel,Médecin généraliste,13 Route de LA PLAGE AZEMMOUR,33.6152369,-7.5394577
-Chraibi,Mohamed salah,Médecin généraliste,304 Bd. MOHAMED V AZEMMOUR,35.1800319,-2.9251802
-El azhari,Naima,Médecin généraliste,45 Bd. ZERKTOUNI AZEMMOUR,33.5888708,-7.6338042
-Laribou,Mustapha,Médecin généraliste,245 Bd Mohamed V AZEMMOUR,35.1800319,-2.9251802
-Najib,Hamid,Médecin généraliste,"54, Bd.My El Hassan AZEMMOUR",34.2235839,-3.3487992
-Tamazi,Mustapha,Médecin généraliste,Derb Boujida n°15 (Derb Sekouila) AZEMMOUR,34.0663623,-4.9672933
-Derbou,Lhoussain,Médecin généraliste,Avenue HASSAN II AZILAL,33.9741922,-6.8788972
-El moussaid,Omar,Médecin généraliste,Av. Hassan II AZILAL,33.9741922,-6.8788972
-Ouarhad,Jamaa,Médecin généraliste,"2, Bd. HASSAN II AZILAL",34.6653943,-1.8886561
-Bouchrit,Boubker,Chirurgien généraliste,49 Rue Tafilalet (Cli.AZROU) AZROU,33.8970191,-5.5451616
-Amzil,Abdelkader,Médecin généraliste,9 Av. Prince My Abdellah AZROU,30.4222455,-9.5991325
-Laaboudi,Nouredine,Médecin généraliste,Place Hassan II AZROU,35.5703779,-5.3689925
-Rahhali,Latifa,Médecin généraliste,49 Rue de Tafilalet AZROU,34.2230446,-3.3437216
-Cherkani,Ahmed,Médecin généraliste,Centre de BAB BERRED BAB BERRED,34.9587229,-4.8215589
-Cherradi,Faouzi,Médecin généraliste,Av.Hassan II BAB BERRED,33.9741922,-6.8788972
-Benchafi,Majida,Médecin généraliste,CENTRE HAD BELFAA BELFAA,30.058,-9.434
-Haj ali,Mohamed noureddine,Chirurgien généraliste,62 BIS RUE BEN BRAHIM BEN AHMED,33.5941268,-7.6321291
-Riani,Rachida,Médecin généraliste,CENTRE DE SANTE BEN AHMED,34.0109593,-6.8282928
-Diouan,Yamna,Médecin généraliste,"6, Bd.Mohamed V BEN GUERIR",35.1800319,-2.9251802
-El mouhtadi,Hassane,Médecin généraliste,Av.Mohamed V BEN GUERIR,34.0254711,-6.8398656
-El mathari,Achraf mohamed,Médecin généraliste,Centre BEN TAIEB BEN TAIEB,35.0445193,-3.4553716
-Lamrini al ouahabi,Abderrahim,Médecin généraliste,Centre BEN TAIEB BEN TAIEB,35.0445193,-3.4553716
-Zerhouni,Mohamed,Médecin généraliste,Lotissement Ilham II BEN TAIEB,34.6994921,-1.8784495
-Serri,Abdallah,Chirurgien généraliste,CLINIQUE LES OLIVIERS BENI MELLAL,31.6225737,-7.9820755
-Ait hmadouch,Ahmed,Radiologue,184 BOULEVARD HASSAN II BENI MELLAL,30.4100832,-9.5896587
-Aachab,Fouad,Médecin généraliste,9 RUE PRINCE MOULAY ABDELLAH BENI MELLAL,34.0176733,-6.8347012
-Sabri,Rachid,Urologue,313 BOULEVARD MOHAMMED V BENI MELLAL,35.1527799,-3.0063099
-Ayad,Nasreddine,Médecin généraliste,Centre  BENI-DRAR BENI-DRAR,34.859507,-1.991664
-Abdenbaoui,Said,Cardiologue,307 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802
-Belmaati cherkaoui,Najib,Cardiologue,Av.des FAR BENI-MELLAL,35.1719595,-2.9275575
-Bouhou,Salah,Chirurgien généraliste,416 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802
-El hachemi,Kheira,Gynécologue obstétricien,43 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802
-El idlbi,Mohamed ali,Gynécologue obstétricien,114 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216
-Abdourafiq,Mustapha,Médecin généraliste,ZAOUIAT CHEIKH BENI-MELLAL,32.6441708,-5.916589
-Belkacem,Rachid,Médecin généraliste,Centre TAGHZIRT BENI-MELLAL,32.416198,-6.1828905
-Bennis,Mohamed mekki,Médecin généraliste,Centre DAR OULD ZIDOUH BENI-MELLAL,32.308189,-6.9065404
-Bensaid,Mounia,Médecin généraliste,n°58 Av. 9 Décembre BENI-MELLAL,32.3359757,-6.3445323
-El amraoui,Mouloudi,Médecin généraliste,"93, BD MOHAMMED V BENI-MELLAL",34.6827048,-1.9163663
-Ezaidi,Hassan,Médecin généraliste,KHEMIS OULED AYAD BENI-MELLAL,32.2007788,-6.7996326
-Ezzaki,Abdelmajid,Médecin généraliste,SOUK SEBT OULAD NEMMA BENI-MELLAL,32.294753,-6.700659
-Fakhy,Noureddine,Médecin généraliste,SOUK SEBT BENI-MELLAL,31.6454861,-7.8559066
-Fares,Mohammed,Médecin généraliste,166 Av. Hassan II BENI-MELLAL,32.3347602,-6.364317
-Haddou,Merieme,Médecin généraliste,ZAOUIAT CHEIKH BENI-MELLAL,32.6441708,-5.916589
-Harti,Abdellatif,Médecin généraliste,SOUK SEBT BENI-MELLAL,31.6454861,-7.8559066
-Kettaby,Abdenaceur,Médecin généraliste,OULED M'BAREK BENI-MELLAL,33.1788823,-8.5222891
-Loughmari,Mohamed,Médecin généraliste,57 Bd. MOHAMED V BENI-MELLAL,35.1800319,-2.9251802
-Mehdaoui,El mostapha,Médecin généraliste,Centre OULED ZMAM BENI-MELLAL,32.3834768,-6.7337724
-Naciri,Abdelkader,Médecin généraliste,Av.MOHAMMED V (Qu.Si Salem) BENI-MELLAL,33.8984409,-5.5458743
-Ouayad,Naima,Médecin généraliste,SIDI AISSA BENI-MELLAL,32.4133333,-8.9051633
-Oukache,Souad,Médecin généraliste,OULED YOUSSEF BENI-MELLAL,32.5653555,-6.4887232
-Slimani,Bouchta,Médecin généraliste,307 Av. Mohamed V BENI-MELLAL,34.011815,-6.8302259
-Taouss,Mahjoub,Médecin généraliste,HAD BRADIA BENI-MELLAL,32.4206517,-6.5072251
-Jabrane,Ahmed jawad,Néphrologue,n°1 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802
-Tawdi,Mohammed,Neurochirurgien,"282, BD MOHAMMED V BENI-MELLAL",33.5936615,-7.6064624
-Benkirane,Mohammed fouad,Ophtalmologue,237 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802
-Boukili makhoukhi,Hassan,Ophtalmologue,102 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216
-Moustaid,Abdelaziz,ORL,422 Bd.Mohamed V BENI-MELLAL,35.1800319,-2.9251802
-Lakhtyari,Said,Gastro-entérologue,75 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216
-Azim,Rabia,Pédiatre,75 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216
-Guessous,Touriya,Pédiatre,102 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216
-Haddadi,Mohamed,Pédiatre,"325, Bd.Mohammed V BENI-MELLAL",33.5950939,-7.615248
-Haddadi,Salah,Pédiatre,Boulevard Mohamed V BENI-MELLAL,35.1800319,-2.9251802
-Sqalli houssaini,Khalid,Psychiatre,Bd Ibn khaldoun N°44 Appt 1 BENI-MELLAL,35.1820409,-2.9244668
-Hida,Mehdi,Médecin généraliste,"235, Bloc 5 BENSERGAO",35.1666843,-2.9535546
-Zougmid,Mohamed najib,Médecin généraliste,Bloc1 n°510 BENSERGAO,42.6329318,21.6841964
-El kadaoui,Mohamed,Biologiste médical,"AVENUE HASSAN II, N°112, 1er.ETAGE BENSLIMANE",33.991248,-6.8663216
-Taghy,Smahi,Chirurgien généraliste,Av.Prince My Abdellah (Polycli.) BENSLIMANE,30.4222455,-9.5991325
-Belaoufir,Omar,Médecin généraliste,16 RUE MOULAY ISMAIL BENSLIMANE,33.5766911,-7.6043088
-El mobarik,El mostapha,Médecin généraliste,"31, Rue MABROUKA BENSLIMANE",35.5834418,-5.355051
-Mouradi,Latifa,Médecin généraliste,"73, AV. HASSAN II BENSLIMANE",35.2664074,-2.9318571
-Rahmani,Mohamed,Cardiologue,"n°4, Rue de Rabat BERKANE",33.5976603,-7.6174948
-Jdaini,Jamal eddine,Dermatologue,86 Rue Chouhada BERKANE,30.4269949,-9.604214
-Hadji socor sukarno,Hashim,Radiologue,94 Rue Chaoui Touria BERKANE,34.925558,-2.3348027
-Settouti,Mohammed,Gynécologue obstétricien,"40, Rue la Resistance BERKANE",35.2409953,-3.9335175
-Ababou,Zineb,Médecin généraliste,34 Rue Bir Anzarane BERKANE,35.7715688,-5.8157561
-Afoud,Fatiha,Médecin généraliste,43 Rue Moukaouama BERKANE,33.2426423,-8.5020242
-Atarraf,Ahmed,Médecin généraliste,"n°79, Rue de Fès BERKANE",34.0168091,-6.8237368
-Benadel,Mohammed,Médecin généraliste,"30, Rue Ibn Rochd BERKANE",33.5830835,-7.6394726
-Benchat,Mouhayaddine,Médecin généraliste,"123, Bd.Moulay Youssef BERKANE",33.6048393,-7.6336854
-Bensalem,Najib,Médecin généraliste,"1, Rue Moulay Idriss BERKANE",34.0196022,-6.8247435
-Berkhli,Boumediene,Médecin généraliste,"34, Rue Bir Anzarane BERKANE",35.7715688,-5.8157561
-Chaoui,Abdelkhalek,Médecin généraliste,"31, Rue Khalid Ibn Walid BERKANE",34.023245,-4.9942375
-Cherifi,Samia,Médecin généraliste,"156, Bd.Prince Heritier BERKANE",35.7721291,-5.8078753
-Chigri,El hassan,Médecin généraliste,"27, Rue Imam Ghazali BERKANE",34.9247736,-2.3303071
-El bekkaoui,Mohamed,Médecin généraliste,"23, Rue Bekkay Lahbil BERKANE",34.6807358,-1.935428
-El hadef,Fouzia,Médecin généraliste,"5, Bd. du 20 Aout BERKANE",30.4187882,-9.6046758
-El ouachekradi,Abdelhafid,Médecin généraliste,Bd. Hassan II BERKANE,30.423291,-9.6029367
-Kostas,Abdelkebir,Médecin généraliste,"241, Bd. Hassan II BERKANE",30.4100832,-9.5896587
-Marrakchi benjaafar,Mohamed,Médecin généraliste,7 Rue Khalid Ibn Oualid BERKANE,34.6872284,-1.9213844
-Saddiki,Hassan,Médecin généraliste,"40, Rue Tarik Ibn Ziad BERKANE",34.6821448,-1.9156728
-Znaidi,Taoufiq,Médecin généraliste,"105, Rue My Abdellah BERKANE",35.7775853,-5.8091098
-Bekkaoui,El hassan,Interniste,"42, Rue du 20 Aout BERKANE",27.1506947,-13.1947143
-Messaoudi,Mohamed,Ophtalmologue,"53, rue de la résistance BERKANE",35.2409953,-3.9335175
-El badri,Ahmed,Pédiatre,"223, Bd. Hassan II BERKANE",30.4100832,-9.5896587
-Kribii,Abdelhafid,Pédiatre,"223, Bd. Hassan II BERKANE",30.4100832,-9.5896587
-Zahaf,Benyoub,Pneumologue,57 RUE DE FES BERKANE,34.0168091,-6.8237368
-Ayoubi,Hassan,Cardiologue,80 RUE IBN ROCHD BERRECHID,33.5830835,-7.6394726
-El moutassil,Touria,Cardiologue,n°1 Rue Ibn Rochd BERRECHID,33.5830835,-7.6394726
-El kadri,Jamal,Gynécologue obstétricien,Clinique CHAOUIA BERRECHID,35.6630844,-5.7655263
-Bada,Mohammed,Médecin généraliste,1 bis Rue Ibn Rochd BERRECHID,33.5830835,-7.6394726
-Dergamoun,Mustapha,Médecin généraliste,13 Rue Moussa Ibn Noussaïr BERRECHID,27.1638018,-13.2148458
-El otmani,Abdellali,Médecin généraliste,"169, AVENUE MY ISMAIL BERRECHID",34.0188312,-6.8252144
-El yakoubi,Charafa,Médecin généraliste,"16, Rue Oqba Ibn Nafii BERRECHID",32.9996735,-7.6207184
-Essoubi,Abderrahim,Médecin généraliste,Av.Oued Tensift E n°363 BERRECHID,34.0629439,-6.7901785
-Hadraoui,Driss,Médecin généraliste,160 Avenue Mohamed V BERRECHID,34.011815,-6.8302259
-Hilmi,Bouchra,Médecin généraliste,17 Rue de Marrakech BERRECHID,30.4310257,-9.5986067
-Naanani,Hamid,Médecin généraliste,180 Av.Moulay ISMAIL BERRECHID,34.0188312,-6.8252144
-Poitrot michel,Robert,Médecin généraliste,ROUTE DE MARRAKECH BERRECHID,33.5409353,-7.6406214
-Mouhsine,Mustapha,Orthopédiste traumatologue,5 Rue Okba Ibn Nafii BERRECHID,34.227964,-3.3450066
-Harakat,Hicham,Pédiatre,164 Bd.Hassan II BERRECHID,30.4100832,-9.5896587
-Tayb,Abdellah,Pneumologue,87 Bd My Ismail BERRECHID,33.6009511,-7.5595786
-Jmari,Mohamed,Médecin généraliste,Les Chalets (Rte.Agadir) BIOUGRA,33.2217021,-8.5555554
-Aghoudan,Moustapha,Médecin généraliste,"12, Rue Casa BNI BOUIFROUR",33.5920742,-7.6449406
-El hanafi,Mostapha,Médecin généraliste,AVENUE MOUKAOUAMA BNI CHIKER,30.4107546,-9.5931331
-Rhanim,Fatima-zahra,Médecin généraliste,"211, Bd.El Massira BOUARFA",30.4099342,-9.5602923
-Benslimane,Anasse,Médecin généraliste,Centre TLAT BOUGUEDRA BOUGUEDRA,32.2547882,-8.9737326
-Idoumghar,Nadia,Médecin généraliste,Av.Hassan II BOUIZAKARNE,33.9741922,-6.8788972
-Titane,El houssine,Médecin généraliste,"19, Rue Bir Anzarane BOUIZAKARNE",35.7715688,-5.8157561
-Badouri,Rahal,Médecin généraliste,MISSOUR BOULEMANE,33.047057,-3.992578
-Daho,Abdellah,Médecin généraliste,OUTAT EL HAJ BOULEMANE,33.337366,-3.696438
-Rbia,Lahcen,Médecin généraliste,Av Hassan II BOULEMANE,33.9741922,-6.8788972
-Mountassir,Ahmed,Médecin généraliste,Place Mosquée BOUMALNE-DADES,30.3739524,-9.5502019
-Chebli,Abderrahmane,Médecin généraliste,26 Rue Oued Eddahab BOUZNIKA,35.7700003,-5.8176921
-Zaanouni,Abderrahim,Médecin généraliste,17 Rue Bir Anzarane BOUZNIKA,35.7715688,-5.8157561
-Alaoui bouhamid,Abdelhafid,Anatomopathologiste,52 BD.ZERKTOUNI CASABLANCA,33.5920964,-7.6366766
-Benamour,Zahra,Anatomopathologiste,400 Bd. Brahim Roudani CASABLANCA,34.6792498,-1.8891121
-Bennani laafirit,Najia,Anatomopathologiste,132 Avenue Hassan II CASABLANCA,33.991248,-6.8663216
-Hamamsi,Mohamed taoufik,Anatomopathologiste,82 Rue Moussa Ibnou Noussaïr CASABLANCA,35.2464435,-3.9323511
-Abassi,Omar,Anesthésiste,728? Bd Modibo Keita CASABLANCA,33.5626767,-7.6060757
-Abdelmalki,Mansour,Anesthésiste,"54, Bd.Ghandi (Clinique Ghandi) CASABLANCA",33.5797465,-7.6570206
-Amar,Abdelaziz,Anesthésiste,Centre Cardiologique CASABLANCA,33.5626127,-7.6301811
-Benabdennbi,Faouzi,Anesthésiste,"13, Place du Nid d'Iris CASABLANCA",33.5882938,-7.6364982
-Benazouz,Ahmed amine,Anesthésiste,202 Bd. Ziraoui CASABLANCA,33.5951287,-7.6330441
-El yamani,Khalid,Anesthésiste,n°2 Rue Assanaoubar CASABLANCA,35.1546484,-2.9761397
-Fkira,Mohammed kamal,Anesthésiste,92 Av Hassan II CASABLANCA,32.3342244,-6.363924
-Gatra,Abdelaziz,Anesthésiste,"12, RUE OMAR SLAOUI CASABLANCA",33.58725,-7.6200063
-Jabrane,Mostafa,Anesthésiste,"CLINIQUE AIN CHOCK 510, AVENUE 2 MARS CASABLANCA",33.5481369,-7.6020871
-Komiha,Abdelaziz,Anesthésiste,"20, Rue FranceVille Clinique Oasis CASABLANCA",33.5620871,-7.6335753
-Mekki berrada,Rachid,Anesthésiste,n°7 Rue Jean Jaurès CASABLANCA,33.590764,-7.629469
-Squalli houssaini,Rachid,Anesthésiste,n°14 Rue de Berne CASABLANCA,33.582305,-7.6161814
-Tajmouati,Mohamed,Anesthésiste,"Clinique rivièra, 301 Bd. Ghandi CASABLANCA",33.5675829,-7.6412064
-Tamine,Jamal eddine,Anesthésiste,"9, RUE OUED ZEM CASABLANCA",34.0157651,-6.8281342
-Azeddoug,Abdellah,Biologiste médical,119 BIR ANZARANE MAARIF CASABLANCA,33.5813913,-7.6391939
-El haimer,Souad,Biologiste médical,"JAMILA 7, N°90 CITE DJEMAA CASABLANCA",33.5406828,-7.571388
-Hda,Nazha,Biologiste médical,N°105 RUE D'AZILAL CASABLANCA,33.5928384,-7.6056524
-Tarik,Jawad,Biologiste médical,BLOC 16 N° 5 SIDI OTHMANE CASABLANCA,33.5570072,-7.5603844
-Alami,Mohamed,Cardiologue,264 BD.GHANDI CASABLANCA,33.5692167,-7.6438975
-Belkhayat,Abdellatif,Cardiologue,76 Bd. du 11 Janvier CASABLANCA,33.5893272,-7.6135232
-Benghazi akhlaki,Abdelhamid,Cardiologue,275 BOULEVARD ZERKTOUNI (CP: 20050) CASABLANCA,33.5921845,-7.6371472
-Benjelloun,Khalid,Cardiologue,Polyclinique CNSS ZIRAOUI CASABLANCA,33.5958367,-7.6325219
-Bennouna,Abdelaziz,Cardiologue,"265, BOULEVARD RAHAL EL MESKINI CASABLANCA",33.587738,-7.6134638
-Bensafiddine,Soumia,Cardiologue,2 Rue Kadi Iass Maârif CASABLANCA,33.5861919,-7.6349881
-Berrada baby,Abdelhaq,Cardiologue,115 Bd. Mohamed V CASABLANCA,35.1800319,-2.9251802
-Chouladi,Abdelkhalek,Cardiologue,50 Rue Mustapha El Maâni CASABLANCA,32.9878522,-7.607265
-Chraibi,Mohamed,Cardiologue,21 Rue Ibrahim Hafid CASABLANCA,33.5877718,-7.628656
-Criquech,Mouad,Cardiologue,"262, rue yacoub el mansour CASABLANCA",33.9761687,-6.8964939
-De vahia,Jean louis,Cardiologue,69 Rue Prince My Abdellah CASABLANCA,34.0176733,-6.8347012
-El makhlouf,Ali,Cardiologue,5 Bd.Mohamed Abdou CASABLANCA,33.584567,-7.6262007
-Essalai,Kekki,Cardiologue,34 Av. Lalla Yacout CASABLANCA,33.5905498,-7.6126175
-Kabbage,Driss,Cardiologue,"60, RUE DE SMYRNE CASABLANCA",33.5736922,-7.6017371
-Khattane,Abdellah,Cardiologue,37 BOULEVARD 11 JANVIER (REZ DE CHAUSSEE) CASABLANCA,33.6955811,-7.3802143
-Lebbar,Mohamed,Cardiologue,AV.2 MARS CASABLANCA,33.5600531,-7.608608
-Ouazzani touhami,Mohammed,Cardiologue,"17, AVENUE DES F.A.R CASABLANCA",32.6585088,-8.4302018
-Rifai,Hamid,Cardiologue,"57, Avenue HASSAN II CASABLANCA",33.991248,-6.8663216
-Skalli,Mostafa,Cardiologue,400 Bd.BRAHIM ROUDANI CASABLANCA,34.6792498,-1.8891121
-Slaoui,Abdelouhab,Cardiologue,"n°209, Bd.D'ANFA CASABLANCA",33.5912309,-7.6355969
-Tagmouti,Fouad,Cardiologue,69 Rue Prince My Abdellah CASABLANCA,34.0176733,-6.8347012
-Zoheir,Fatima,Cardiologue,Polyclinique CNSS Derb Ghallef CASABLANCA,33.2595485,-8.5120308
-Faris,Bouchaib,Chirurgien cardiaque,19 Av. Ibn Sina (Centre Cardiologique) CASABLANCA,33.996874,-6.8512163
-Alami,Abdeljaouad,Chirurgien généraliste,"47, Bd. Rahal El Meskini CASABLANCA",33.587738,-7.6134638
-Amor,Said,Chirurgien généraliste,75 Bd. Moulay Youssef CASABLANCA,33.6048393,-7.6336854
-Bengelloun,Mounir,Chirurgien généraliste,"n°8, Bd. Khouribga CASABLANCA",33.5898354,-7.6051717
-Bouazzaoui,Ahmed,Chirurgien généraliste,12-14 Rue Omar Slaoui CASABLANCA,33.58725,-7.6200063
-El mansouri,My abdelilah,Chirurgien généraliste,"105, Bd. d'Anfa CASABLANCA",33.5912309,-7.6355969
-Fikri,Fouad,Chirurgien généraliste,120 Bd. Idriss 1er. CASABLANCA,33.5747899,-7.610019
-Hafdi,Faycal,Chirurgien généraliste,n°47 Av. HASSAN II CASABLANCA,33.9741922,-6.8788972
-Harit,Mohammed,Chirurgien généraliste,45 Rue PRINCE MOULAY ABDELLAH CASABLANCA,34.0176733,-6.8347012
-Hassine tadlaoui,Abdelfettah,Chirurgien généraliste,"n°12, BD. D'ANFA CASABLANCA",33.5912309,-7.6355969
-Hosni,Abdelkader,Chirurgien généraliste,Polyclinique C.N.S.S. CASABLANCA,30.4222859,-9.6046474
-Ibnoulkhatib,Rachid,Chirurgien généraliste,POLYCLINIQUE CNSS BOURGOGNE CASABLANCA,33.5985679,-7.6418596
-Jamil,Mohammed,Chirurgien généraliste,Bd.Ziraoui Polyclinique CNSS CASABLANCA,33.5951287,-7.6330441
-Jbara,Mohamed,Chirurgien généraliste,n°336 Bd. El Fida CASABLANCA,33.5714281,-7.5872884
-Kettani,Abdeljalil,Chirurgien généraliste,75 Bd.CHEFCHAOUNI Aïn SEBAA CASABLANCA,33.6130078,-7.5281049
-Kharoub,El khadir,Chirurgien généraliste,n°8 Bd. Yacoub El Mansour CASABLANCA,33.5695356,-7.6522997
-Kouddane,Khalid,Chirurgien généraliste,277 Avenue du 2 MARS CASABLANCA,31.5167819,-9.7611894
-Laabi,Abdelali,Chirurgien généraliste,AVENUE B SIDI BERNOUSSI CASABLANCA,33.6080485,-7.4956419
-Lfadeli,Abdelhakim,Chirurgien généraliste,70 BOULEVARD AFGHANISTAN CASABLANCA,33.5681575,-7.6834683
-Madani,Ahmed,Chirurgien généraliste,n°91 Av. Mers Sultan CASABLANCA,33.5855879,-7.6163859
-Mechat,Fawz,Chirurgien généraliste,10 Rue Ben Dahane CASABLANCA,33.5751418,-7.6046174
-Mekouar,Tayeb,Chirurgien généraliste,EN COURS CASABLANCA,33.5353339,-7.5815599
-Najioullah,Hakim,Chirurgien généraliste,"67, AVENUE DES F.A.R CASABLANCA",32.6585088,-8.4302018
-Radhi,Noureddine,Chirurgien généraliste,158 BOULEVARD D'ANFA CASABLANCA,33.5905068,-7.6380579
-Saher,Fouad,Chirurgien généraliste,"115 Bd. Mohamed V, 20000 CASABLANCA",33.2831052,-7.5911924
-Salmi,El yazid,Chirurgien généraliste,33 Bd. Bir Anzarane Maârif CASABLANCA,33.5800593,-7.6370592
-Sefrioui,Abdelali,Chirurgien généraliste,138 Av. MERS SULTAN CASABLANCA,33.5855879,-7.6163859
-Sefrioui,Abderrahim,Chirurgien généraliste,"165, AV.ABDELMOUMEN CASABLANCA",34.0226615,-6.8303297
-Sentissi idrissi,Abdelmalek,Chirurgien généraliste,206 Av. Mers Sultan (Polycli.) CASABLANCA,33.5855879,-7.6163859
-Souiri,Abdelmajid,Chirurgien généraliste,Polyclinique CNSS Ziraoui CASABLANCA,33.5958367,-7.6325219
-Touzani,Mohamed kamal,Chirurgien généraliste,n°97 Bd. Mohamed V CASABLANCA,35.1800319,-2.9251802
-Arsalane,El mostafa,Chirurgien pédiatrique,9 Rue Kadi Iass Maârif CASABLANCA,33.585956,-7.6356742
-Dahreddine,Mohamed,Chirurgien pédiatrique,739 Route.Mediouna (Prés Ciné.El Beida) CASABLANCA,33.564391,-7.5953157
-Harouchi,Abderrahim,Chirurgien pédiatrique,34 Rue charm el cheikh CASABLANCA,33.5827323,-7.6290201
-Laraki-el houssaini,Bouchra,Chirurgien pédiatrique,131 BOULEVARD ABDELMOUMEN CASABLANCA,33.5639303,-7.6273244
-Mekouar,Rochdi,Chirurgien pédiatrique,n°52 Bd. Zerktouni CASABLANCA,33.5888708,-7.6338042
-Refass,Abdelouahed,Chirurgien pédiatrique,237 Bd. Zerktouni CASABLANCA,33.5903249,-7.6359013
-Cochain,Jean pierre,Chirurgien plasticien,n°2 Bd. du 9 Avril (Cli. Cochain) P CASABLANCA,33.5819115,-7.6312492
-Guessous,Mohamed jamal,Chirurgien plasticien,73 Av. Lalla Yacout CASABLANCA,33.5905498,-7.6126175
-Kari,Peter,Chirurgien plasticien,"7, RUE JEAN JAURES CASABLANCA",33.590764,-7.629469
-Mezian amor,Rachid,Chirurgien plasticien,"27, Rue Khaouarizmi (Lacepede) CASABLANCA",33.5934712,-7.6256952
-Tazi,El hassane,Chirurgien plasticien,43 Rue Sebou (ex;Artois) Gauthier CASABLANCA,33.5894538,-7.6313738
-Terrab,Souad,Chirurgien plasticien,EN COURS CASABLANCA,33.5353339,-7.5815599
-Abouyoub,Omar,Dermatologue,n°227 Bd. Mohamed V CASABLANCA,35.1800319,-2.9251802
-Afailal,Aziza,Dermatologue,393 Rue Mostapha El Maâni CASABLANCA,35.1700955,-2.9215164
-Alaoui el hassani,Siham,Dermatologue,"209, Bd.de la Résistance CASABLANCA",33.5928366,-7.6035877
-Bennani,Said,Dermatologue,30 Rue du Marché MAARIF CASABLANCA,33.5845097,-7.6333676
-Bennouna,Zhar jamil,Dermatologue,161 Bd. Rahal El Meskini CASABLANCA,33.587738,-7.6134638
-Berrada,Abdelmajid,Dermatologue,76 Bd.du 11 Janvier CASABLANCA,33.5893272,-7.6135232
-Bichara,Mohamed,Dermatologue,4 Bd. Mohamed Zerktouni CASABLANCA,33.5920964,-7.6366766
-Boufaim,Houria,Dermatologue,Polyclinique CNSS Ziraoui CASABLANCA,33.5958367,-7.6325219
-Bou-ouhrich,Mohamed,Dermatologue,"n°356, Bd. El Fida CASABLANCA",33.5714281,-7.5872884
-Bourra,Ahmed,Dermatologue,19 Place 16 Novembre CASABLANCA,33.5945197,-7.6168641
-Devico,Victory,Dermatologue,218 Av.Ambassadeur Ben Aïcha CASABLANCA,33.598305,-7.5924452
-El alouf,Chalom,Dermatologue,"273, BD.MOHAMED V CASABLANCA",35.1800319,-2.9251802
-Asri,Mohamed,Cardiologue,Boulevard Mekka LAAYOUNE,33.5578244,-7.6298311
-El qadiri boutchich,Med.abdess,Radiologue,n°164 Avenue de la Mecque LAAYOUNE,36.7233461,10.2098209
-Abouzaid,Hamdnah,Médecin généraliste,"308, Avenue Makka LAAYOUNE",26.2576925,50.6114855
-El amine,Nadia,Médecin généraliste,"142, Avenue Boukraâ LAAYOUNE",34.0481518,-6.7841972
-Lahlou mimi,Mohammed,Médecin généraliste,EN COURS LAAYOUNE,46.481867,6.7889076
-Sakaly,Abdelhafid,Médecin généraliste,"21, Av.Sakia Al Hamra LAAYOUNE",35.0138153,-3.0203692
-El andaloussi,Maria,Anatomopathologiste,"186, Avenue Mohamed V MARRAKECH",34.0194935,-6.836793
-Marrat,Abdelouahed,Anatomopathologiste,"70, Rue Liberté Guéliz (Labo.Zohour) MARRAKECH",31.6363141,-8.0104575
-Ajana,Khalid,Anesthésiste,"2, Rue Yougoslavie (Polycli.du Sud) MARRAKECH",45.1911848,5.7248584
-Tadili,Mohamed reda,Anesthésiste,Polyclinique CNSS Rte.Targa MARRAKECH,35.4003657,-1.2384563
-El yahiaoui,Youssef,Cardiologue,"10, Rue Tarik Ibn Ziad MARRAKECH",34.6821448,-1.9156728
-Aboufirass,Abdellatif,Chirurgien généraliste,"17, Rue Yougoslavie MARRAKECH",34.0207671,-6.8356617
-Ait khouya,Abdellatif,Chirurgien généraliste,"2, Rue Ibn Aïcha - Guéliz MARRAKECH",31.6385128,-8.017761
-Djoudi mohamed,Abdelaziz,Chirurgien généraliste,"Rue Moulay Ismaïl, Médina MARRAKECH",31.6230153,-7.9908712
-El hamidi,Abderrahman,Chirurgien généraliste,"76, Rue Ibn Toumert MARRAKECH",31.6353264,-8.0071794
-Majid,Jamal-eddine,Chirurgien généraliste,Polyclinique CNSS Rte.Targa MARRAKECH,35.4003657,-1.2384563
-Perez,Moise,Chirurgien généraliste,171 Avenue Mohamed V MARRAKECH,34.0254711,-6.8398656
-Taouil,Abdelali,Radiologue,Polyclinique CNSS Rte.Targa MARRAKECH,35.4003657,-1.2384563
-El guermai,Mohamed najib,Endocrinologue,"34, Bd. Zerktouni MARRAKECH",33.5836216,-7.6252713
-Ait el haddad,Jamila,Gynécologue obstétricien,EN COURS MARRAKECH,46.481867,6.7889076
-Bellon,Claire,Gynécologue obstétricien,"5, Rue Sourya MARRAKECH",31.6347318,-8.0102582
-El ghorfi,Mohamed jamal,Gynécologue obstétricien,"43, Bd. Zerktouni (Maison de Traite) MARRAKECH",33.5836216,-7.6252713
-Nassaf,Mohammed,Gynécologue obstétricien,"86, Av Mohamed V MARRAKECH",34.0254711,-6.8398656
-Mghazli,Mohamed azzam,Médecin du sport,"213, Bd. Mohamed V MARRAKECH",36.7681291,3.0527696
-Al wardi baha eldin,Jabbar,Médecin généraliste,"58, Bab Agnaou, Médina MARRAKECH",31.6224547,-7.9899066
-Amghar,Aicha,Médecin généraliste,52 RUE RMILA MARRAKECH,36.8878287,10.3066405
-Ammor,Iz-arab,Médecin généraliste,"213, Av.Mohamed V MARRAKECH",34.0254711,-6.8398656
-Arrad,Ahmed,Médecin généraliste,"45, Rue Bab Agnaou, Médina MARRAKECH",31.6224547,-7.9899066
-Baji,Khalid,Médecin généraliste,"183, Av Mohamed V MARRAKECH",34.0254711,-6.8398656
-Battoum,Hassan,Médecin généraliste,"29, Rue Yougoslavie Guéliz MARRAKECH",31.6332476,-8.013529
-Bel bachir,Khadija,Médecin généraliste,Polyclinique CNSS Rte.Targa MARRAKECH,35.4003657,-1.2384563
-Belmezouar,Samir,Médecin généraliste,Bab Kechich n°79 Médina MARRAKECH,31.6393901,-7.9832456
-Ben chekroun,Teib,Médecin généraliste,"18, Rue Bab Agnaou, Médina MARRAKECH",31.6224547,-7.9899066
-Benameur,Said,Médecin généraliste,6 Rue de la liberté MARRAKECH,48.88056,2.392654
-Bennani,Taoufik,Médecin généraliste,Polyclinique du Sud Rue Yougoslavie MARRAKECH,31.6377786,-8.0146531
-Bentaleb,Hassan,Médecin généraliste,Centre de Tnine OUDAYA MARRAKECH,31.6338889,-8.2509946
-Bouhad farid,Chawki,Médecin généraliste,"N°63, Bab Doukkala Boutouil MARRAKECH",31.6349884,-7.9982416
-Boutfouste,Naima,Médecin généraliste,Centre Santé Mouassine MARRAKECH,31.6324575,-7.9826457
-Contamanou evangelia,Lina,Médecin généraliste,"28, Rue de la Liberté MARRAKECH",44.8408419,-0.6003294
-El mansouri,Abdelghani,Médecin généraliste,"14, Av. Houman El Fetouaki MARRAKECH",31.6225834,-7.9898439
-Ellorhaoui,Ahmed,Médecin généraliste,"92, Bd. Zerktouni MARRAKECH",33.5888412,-7.6339697
-Errajraji,Seddik,Médecin généraliste,ASSIF B N°307 MARRAKECH,31.6543389,-8.0056702
-Essrhir,Abdeslam,Médecin généraliste,Polyclinique de Sud Rue Yougoslavie MARRAKECH,35.6567444,10.0925984
-Fassi fihri,Abdelkader,Médecin généraliste,Polyclinique de la C.N.S.S MARRAKECH,-8.9949646,13.2760246
-Houssaini,Amal,Médecin généraliste,"55, Boutouil Kasbah MARRAKECH",31.624704,-7.9846083
-Ihfa,Abdelhadi,Médecin généraliste,"9, Boulevard de Safi MARRAKECH",31.638319,-8.0034984
-Khayat,Samira,Médecin généraliste,Polyclinique CNSS Targa MARRAKECH,35.4181291,-1.1782222
-Laalou,Abdelghani,Médecin généraliste,"138, Bd.Mohamed V MARRAKECH",36.7681291,3.0527696
-Laraqui,Saida,Médecin généraliste,Polyclinique CNSS. Rte.Targa MARRAKECH,35.4003657,-1.2384563
-Mghari,Abderrazak,Médecin généraliste,"396, Massira II B MARRAKECH",34.6790372,-1.8998767
-Michaelis gertrud,Anna,Médecin généraliste,7 Rue Ibn Sina MARRAKECH,31.6389726,-8.0130668
-Smires,Mustapha,Médecin généraliste,"80, Boutouil Bab Doukkala MARRAKECH",31.6349884,-7.9982416
-El hilali,Faical,Interniste,"90, Bd. Zerktouni n°29 MARRAKECH",33.5888412,-7.6339697
-Tomnouli,Mohamed najib,Oncologue,"12, Rue Sourya Guéliz MARRAKECH",31.6352003,-8.0093202
-Alami merrouni,Youssef,Ophtalmologue,"29, Rue Yougoslavie Guéliz MARRAKECH",31.6332476,-8.013529
-Benhamou,Armand,Ophtalmologue,Rue Ibn Toumert Guéliz MARRAKECH,31.6376566,-8.0086969
-Bichara,Rachid,Ophtalmologue,"183, Bd. Mohamed V MARRAKECH",36.7681291,3.0527696
-Jamali,Azzeddine,Ophtalmologue,"213, Av. Mohamed V MARRAKECH",34.0254711,-6.8398656
-Laraqui,Jaouad,Ophtalmologue,"2, Rue Ibn Aïcha MARRAKECH",31.6385128,-8.017761
-Sebai,Sarah,Ophtalmologue,EN COURS MARRAKECH,46.481867,6.7889076
-Bentbib,Brahim,ORL,"213 Av.Mohamed V, n°23 MARRAKECH",34.0254711,-6.8398656
-Machraoui,Said,ORL,29 Rue Yougoslavie MARRAKECH,34.0207671,-6.8356617
-El kairaouani,Abdeslam,Gastro-entérologue,48 Rue la Liberté Guéliz MARRAKECH,31.6356373,-8.0114897
-Smili,Ahmed,Gastro-entérologue,"43, Bd. Zerktouni MARRAKECH",33.5836216,-7.6252713
-El baroudi,Khadija,Pédiatre,"82 Av. Hassan II, Guéliz MARRAKECH",31.6309719,-8.0127389
-El bellaj,Soumia,Pédiatre,Av.Hassan II (en face la Gendarmeri) App.2 MARRAKECH,34.0100778,-6.8527813
-Jerczynska nee,Wrobel,Pédiatre,6 Rue de la Liberté Guéliz MARRAKECH,31.6356373,-8.0114897
-Khaldoun,Naima,Pédiatre,"29, Rue Yougoslavie Guéliz MARRAKECH",31.6332476,-8.013529
-Bousta,Abdellatif,Pneumologue,"183, Av.Mohamed V MARRAKECH",34.0254711,-6.8398656
-Ayatt,Miloudi,Psychiatre,"68, Rue de la Liberté, Guéliz MARRAKECH",31.6361521,-8.0107043
-El baroudi amine,Nezha,Rhumatologue,82 Av.Hassan II - Guéliz MARRAKECH,31.6309719,-8.0127389
-Zizi,Mohamed,Rhumatologue,"183, Av. Mohamed V MARRAKECH",34.0254711,-6.8398656
+nom,prenom,specialite,adresse professionnelle,latitude,longitude,ville
+Kimakh,Naima,Anesthésiste,Clinique Agadir des Spécialités AGADIR,30.4205162,-9.5838532,agadir
+Lyassami,Abdelilah,Anesthésiste,Clinique des Spécialités AGADIR,51.9805902,4.2445744,agadir
+Benjelloun,El mostafa,Cardiologue,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599,agadir
+Youbi idrissi,Youssef,Chirurgien généraliste,Polyclinique du souss Av. Abderrahim Bouabid AGADIR,30.4130771,-9.5728377,agadir
+Chigr,Hassan,Gynécologue obstétricien,"7, Rue de Marrakech AGADIR",30.4310257,-9.5986067,agadir
+Atlab,Nor-essaid,Médecin généraliste,"40, Av.Jamal Abdennacer Massira AGADIR",30.4125269,-9.5682978,agadir
+Bensalem,Abdeljebbar,Médecin généraliste,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599,agadir
+Bouchiba,Mohamed faouzi,Médecin généraliste,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599,agadir
+El grar,Najia (jamila),Médecin généraliste,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599,agadir
+Haib,Khalid,Médecin généraliste,Centre Tamri AGADIR,30.6966311,-9.8250377,agadir
+Hakam,Khalid,Médecin généraliste,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599,agadir
+Mesdady,Saida,Médecin généraliste,29 Février Talborjt AGADIR,30.4226546,-9.5926483,agadir
+Ohayon,Maurice,Médecin généraliste,Appt.13 Hay Riad (5 Rue Madrid) AGADIR,34.9243469,-2.3059319,agadir
+Aboulazhar,Idriss,Ophtalmologue,"51bis, Av.29 Février Talborjt AGADIR",30.4226546,-9.5926483,agadir
+Boufdil,Mohamed,Ophtalmologue,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599,agadir
+Tadlaoui ouafi,Abdelilah,Orthopédiste traumatologue,Av.29 Février n°14 Talborjt AGADIR,30.4226546,-9.5926483,agadir
+Assakoum,Ahmed,ORL,"231, Rue Marrakech AGADIR",35.1772049,-2.926723,agadir
+Dissani,Abderrahim,ORL,255 Avenue Hassan II AGADIR,33.991248,-6.8663216,agadir
+El mortaji,El hassan,Gastro-entérologue,N° 59 RUE MARRAKECH QUARTIER INDUSTRIEL AGADIR,30.4310257,-9.5986067,agadir
+Taleb,Mohamed,Gastro-entérologue,Rue Hôtel de Ville AGADIR,48.8565175,2.3639179,agadir
+Jacob albert,Joseph loui,Pédiatre,"45 Av.Kennedy, Talborjt AGADIR",30.4204429,-9.591991,agadir
+Nbou,Abdesselam,Pédiatre,"45, Av.Kennedy Talborjt AGADIR",30.4204429,-9.591991,agadir
+Temstet,Raphael,Pédiatre,"25, Place du Souss AGADIR",29.7203925,-8.9731103,agadir
+El alaoui benchad,My youssef,Pneumologue,"2, Rue Ifni, Talborjt AGADIR",30.4224281,-9.5959446,agadir
+Ezzine,Abdeljabar,Psychiatre,Av. Moulay Abdellah AGADIR,35.180439,-2.9229021,agadir
+Belkebir mrani,Abderrahmane,Rhumatologue,"102, Av.Kennedy - Talborjt AGADIR",30.4234549,-9.5959417,agadir
+Morchid,Abderrahmane,Urologue,Polyclinique CNSS Rue My Youssef AGADIR,34.0099875,-6.862599,agadir
+Id hammouche,Rachid,Médecin généraliste,hay essalam AGADIR-IDA OU TANANE,33.5724212,-7.6578406,ida ou tanane
+Ouriemchi,Aicha,Médecin généraliste,N° 6 RUE ALLAL BEN ABDELLAH AHFIR,33.5960957,-7.6158679,ahfir
+Sany,Abdellatif,Médecin généraliste,AIN AOUDA Centre AIN AOUDA,33.803077,-6.79413,ain aouda
+Mabrouk,Rabha,Médecin généraliste,AIN ATTIG Centre AIN ATTIQ,33.8898576,-6.9678655,ain attiq
+Banana,Abdelkrim,Médecin généraliste,"24,Bd.Isly AIN BNI MATHAR",34.6846133,-1.9638433,ain bni mathar
+Douhi,Mohamed,Médecin généraliste,"2, Rue Figuig AIN BNI MATHAR",35.1717767,-2.9295908,ain bni mathar
+El hassani,Omar,Médecin généraliste,AL HAY AL JADID N°922 AIN EL AOUDA,30.3467769,-9.497595,ain el aouda
+Zekraoui,Driss,Médecin généraliste,"34, AVENUE HASSAN II AIN LEUH",35.7825789,-5.8179886,ain leuh
+Rhazale,Mohamed,Médecin généraliste,Diour Jdad AIN TAOUJDATE,33.8878423,-5.5528646,ain taoujdate
+Sahibi,Abdelaziz,Médecin généraliste,Avenue Mohamed V AIT BAHA,34.0254711,-6.8398656,ait baha
+Ghanimi,Aicha,Médecin généraliste,"Km 1, Rte.Biougra AIT MELLOUL",30.1990071,-9.2239774,ait melloul
+Debbagh,Mohamed youssef,Médecin généraliste,Cercle AIT OURIR AIT OURIR,31.5003881,-7.7381094,ait ourir
+Qaceme,Rahal,Médecin généraliste,AIT OURIR AIT OURIR,31.563898,-7.662276,ait ourir
+Yacoubi el bouderraoui,Rajaa,Médecin généraliste,"301, bloc 4 AKLIM",33.561023,-7.5707408,aklim
+Yahyaoui,Loukili,Médecin généraliste,Centre  AKLIM AKLIM,34.886741,-2.518554,aklim
+Chouata,Boubker,Médecin généraliste,AL HAOUZ AL HAOUZ,31.2806715,-7.9251771,ait ourir 
+El mostakim,Mohamed,Médecin généraliste,Centre AIT OURIR AL HAOUZ,31.563898,-7.662276,ait ourir
+Dira,Mohamed,Cardiologue,"112, Bd Mohamed V AL HOCEIMA",35.1800319,-2.9251802,al hoceima
+Lachkar,M'hamed,Chirurgien généraliste,30 Bd. Mohamed V (Clinique) AL HOCEIMA,35.5702082,-5.3732833,al hoceima
+Benkaddour,Mohamed,Gynécologue obstétricien,"7, Rue Abdellah Hammou AL HOCEIMA",34.6637067,-1.9335672,al hoceima
+El hankouri,Mekki,Gynécologue obstétricien,97 Av. Mohamed V AL HOCEIMA,34.011815,-6.8302259,al hoceima
+Alami,Mohamed rachid,Médecin généraliste,"139, Bd.Abdelkrim El Khattabi AL HOCEIMA",33.5829484,-7.6598871,al hoceima
+Bourgila,Abdelkhalek,Médecin généraliste,55 Av. Abdelkrim Khattabi AL HOCEIMA,34.0254772,-6.8457592,al hoceima
+El ouardani,Ahmed,Médecin généraliste,97 Bd. Mohamed V AL HOCEIMA,35.1800319,-2.9251802,al hoceima
+Ouyahya,Fouad,Médecin généraliste,48 Bd Hassan II AL HOCEIMA,30.4100832,-9.5896587,al hoceima
+Afkir,Abdelbaki,Néphrologue,HOPITAL MOHAMED V AL HOCEIMA,35.1684934,-5.2712446,al hoceima
+Azizi,Salah,ORL,"12, Rue de Tétouan AL HOCEIMA",33.5986614,-7.6152828,al hoceima
+El farricha najib,Asmaa,ORL,10 Bd.Abdelkrim Khattabi AL HOCEIMA,34.0884643,-6.7844882,al hoceima
+Bouia,Abdelmajid,Médecin généraliste,Av.Hassan II AOULOUZ,33.9741922,-6.8788972,aoulouz
+Ismaili alaoui,Abdelaziz,Médecin généraliste,"17, RUE CHENGUIT ARFOUD",33.7013109,-7.3912628,arfoud
+Lamjimer,Fatiha,Médecin généraliste,n°11 Rue Al Masjid ARFOUD,33.9984318,-6.8683394,arfoud
+Sabbar,Lahoussine,Médecin généraliste,ASNI ASNI,31.2496355,-7.980004,asni asni
+Benmalek,Ahmed,Médecin généraliste,"2, Av. Hassan II ASSILAH",34.0200729,-6.8422579,assilah
+Haddouche,Hayet,Médecin généraliste,"Bd.Hassan II, BP.5 ASSILAH",30.4100832,-9.5896587,assilah
+Lysenko serghini,Irina,Médecin généraliste,227 Av. Hassan II ASSILAH,33.991248,-6.8663216,assilah
+Serghini,Saad,Médecin généraliste,"21, Rue de la Liberté ASSILAH",31.6356373,-8.0114897,assilah
+Benjelloun,Fadel,Médecin généraliste,13 Route de LA PLAGE AZEMMOUR,33.6152369,-7.5394577,azemmour
+Chraibi,Mohamed salah,Médecin généraliste,304 Bd. MOHAMED V AZEMMOUR,35.1800319,-2.9251802,azemmour
+El azhari,Naima,Médecin généraliste,45 Bd. ZERKTOUNI AZEMMOUR,33.5888708,-7.6338042,azemmour
+Laribou,Mustapha,Médecin généraliste,245 Bd Mohamed V AZEMMOUR,35.1800319,-2.9251802,azemmour
+Najib,Hamid,Médecin généraliste,"54, Bd.My El Hassan AZEMMOUR",34.2235839,-3.3487992,azemmour
+Tamazi,Mustapha,Médecin généraliste,Derb Boujida n°15 (Derb Sekouila) AZEMMOUR,34.0663623,-4.9672933,azemmour
+Derbou,Lhoussain,Médecin généraliste,Avenue HASSAN II AZILAL,33.9741922,-6.8788972,azilal
+El moussaid,Omar,Médecin généraliste,Av. Hassan II AZILAL,33.9741922,-6.8788972,azilal
+Ouarhad,Jamaa,Médecin généraliste,"2, Bd. HASSAN II AZILAL",34.6653943,-1.8886561,azilal
+Bouchrit,Boubker,Chirurgien généraliste,49 Rue Tafilalet (Cli.AZROU) AZROU,33.8970191,-5.5451616,azrou
+Amzil,Abdelkader,Médecin généraliste,9 Av. Prince My Abdellah AZROU,33.43443,-5.22126,azrou
+Laaboudi,Nouredine,Médecin généraliste,Place Hassan II AZROU,35.5703779,-5.3689925,azrou
+Rahhali,Latifa,Médecin généraliste,49 Rue de Tafilalet AZROU,34.2230446,-3.3437216,azrou
+Benchafi,Majida,Médecin généraliste,CENTRE HAD BELFAA BELFAA,30.058,-9.434,belfaa
+Diouan,Yamna,Médecin généraliste,"6, Bd.Mohamed V BEN GUERIR",35.1800319,-2.9251802,ben guerir
+El mouhtadi,Hassane,Médecin généraliste,Av.Mohamed V BEN GUERIR,34.0254711,-6.8398656,ben guerir
+Serri,Abdallah,Chirurgien généraliste,CLINIQUE LES OLIVIERS BENI MELLAL,31.6225737,-7.9820755,beni mellal
+Ait hmadouch,Ahmed,Radiologue,184 BOULEVARD HASSAN II BENI MELLAL,30.4100832,-9.5896587,beni mellal
+Aachab,Fouad,Médecin généraliste,9 RUE PRINCE MOULAY ABDELLAH BENI MELLAL,34.0176733,-6.8347012,beni mellal
+Sabri,Rachid,Urologue,313 BOULEVARD MOHAMMED V BENI MELLAL,35.1527799,-3.0063099,beni mellal
+Ayad,Nasreddine,Médecin généraliste,Centre  BENI-DRAR BENI-DRAR,34.859507,-1.991664,beni drar
+Abdenbaoui,Said,Cardiologue,307 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802,beni mellal
+Belmaati cherkaoui,Najib,Cardiologue,Av.des FAR BENI-MELLAL,35.1719595,-2.9275575,beni mellal
+Bouhou,Salah,Chirurgien généraliste,416 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802,beni mellal
+El hachemi,Kheira,Gynécologue obstétricien,43 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802,beni mellal
+El idlbi,Mohamed ali,Gynécologue obstétricien,114 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216,beni mellal
+Abdourafiq,Mustapha,Médecin généraliste,ZAOUIAT CHEIKH BENI-MELLAL,32.6441708,-5.916589,beni mellal
+Belkacem,Rachid,Médecin généraliste,Centre TAGHZIRT BENI-MELLAL,32.416198,-6.1828905,beni mellal
+Bennis,Mohamed mekki,Médecin généraliste,Centre DAR OULD ZIDOUH BENI-MELLAL,32.308189,-6.9065404,beni mellal
+Bensaid,Mounia,Médecin généraliste,n°58 Av. 9 Décembre BENI-MELLAL,32.3359757,-6.3445323,beni mellal
+El amraoui,Mouloudi,Médecin généraliste,"93, BD MOHAMMED V BENI-MELLAL",34.6827048,-1.9163663,beni mellal
+Ezaidi,Hassan,Médecin généraliste,KHEMIS OULED AYAD BENI-MELLAL,32.2007788,-6.7996326,beni mellal
+Ezzaki,Abdelmajid,Médecin généraliste,SOUK SEBT OULAD NEMMA BENI-MELLAL,32.294753,-6.700659,beni mellal
+Fakhy,Noureddine,Médecin généraliste,SOUK SEBT BENI-MELLAL,31.6454861,-7.8559066,beni mellal
+Fares,Mohammed,Médecin généraliste,166 Av. Hassan II BENI-MELLAL,32.3347602,-6.364317,beni mellal
+Haddou,Merieme,Médecin généraliste,ZAOUIAT CHEIKH BENI-MELLAL,32.6441708,-5.916589,beni mellal
+Harti,Abdellatif,Médecin généraliste,SOUK SEBT BENI-MELLAL,31.6454861,-7.8559066,beni mellal
+Kettaby,Abdenaceur,Médecin généraliste,OULED M'BAREK BENI-MELLAL,33.1788823,-8.5222891,beni mellal
+Loughmari,Mohamed,Médecin généraliste,57 Bd. MOHAMED V BENI-MELLAL,35.1800319,-2.9251802,beni mellal
+Mehdaoui,El mostapha,Médecin généraliste,Centre OULED ZMAM BENI-MELLAL,32.3834768,-6.7337724,beni mellal
+Naciri,Abdelkader,Médecin généraliste,Av.MOHAMMED V (Qu.Si Salem) BENI-MELLAL,33.8984409,-5.5458743,beni mellal
+Ouayad,Naima,Médecin généraliste,SIDI AISSA BENI-MELLAL,32.4133333,-8.9051633,beni mellal
+Oukache,Souad,Médecin généraliste,OULED YOUSSEF BENI-MELLAL,32.5653555,-6.4887232,beni mellal
+Slimani,Bouchta,Médecin généraliste,307 Av. Mohamed V BENI-MELLAL,34.011815,-6.8302259,beni mellal
+Taouss,Mahjoub,Médecin généraliste,HAD BRADIA BENI-MELLAL,32.4206517,-6.5072251,beni mellal
+Jabrane,Ahmed jawad,Néphrologue,n°1 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802,beni mellal
+Tawdi,Mohammed,Neurochirurgien,"282, BD MOHAMMED V BENI-MELLAL",33.5936615,-7.6064624,beni mellal
+Benkirane,Mohammed fouad,Ophtalmologue,237 Bd. Mohamed V BENI-MELLAL,35.1800319,-2.9251802,beni mellal
+Boukili makhoukhi,Hassan,Ophtalmologue,102 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216,beni mellal
+Moustaid,Abdelaziz,ORL,422 Bd.Mohamed V BENI-MELLAL,35.1800319,-2.9251802,beni mellal
+Lakhtyari,Said,Gastro-entérologue,75 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216,beni mellal
+Azim,Rabia,Pédiatre,75 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216,beni mellal
+Guessous,Touriya,Pédiatre,102 Av. Hassan II BENI-MELLAL,33.991248,-6.8663216,beni mellal
+Haddadi,Mohamed,Pédiatre,"325, Bd.Mohammed V BENI-MELLAL",33.5950939,-7.615248,beni mellal
+Haddadi,Salah,Pédiatre,Boulevard Mohamed V BENI-MELLAL,35.1800319,-2.9251802,beni mellal
+Sqalli houssaini,Khalid,Psychiatre,Bd Ibn khaldoun N°44 Appt 1 BENI-MELLAL,35.1820409,-2.9244668,beni mellal
+El kadaoui,Mohamed,Biologiste médical,"AVENUE HASSAN II, N°112, 1er.ETAGE BENSLIMANE",33.991248,-6.8663216,benslimane
+Taghy,Smahi,Chirurgien généraliste,Av.Prince My Abdellah (Polycli.) BENSLIMANE,33.6122,–7.1211,benslimane
+Belaoufir,Omar,Médecin généraliste,16 RUE MOULAY ISMAIL BENSLIMANE,33.5766911,-7.6043088,benslimane
+El mobarik,El mostapha,Médecin généraliste,"31, Rue MABROUKA BENSLIMANE",35.5834418,-5.355051,benslimane
+Mouradi,Latifa,Médecin généraliste,"73, AV. HASSAN II BENSLIMANE",35.2664074,-2.9318571,benslimane
+Rahmani,Mohamed,Cardiologue,"n°4, Rue de Rabat BERKANE",33.5976603,-7.6174948,berkane
+Jdaini,Jamal eddine,Dermatologue,86 Rue Chouhada BERKANE,30.4269949,-9.604214,berkane
+Hadji socor sukarno,Hashim,Radiologue,94 Rue Chaoui Touria BERKANE,34.925558,-2.3348027,berkane
+Settouti,Mohammed,Gynécologue obstétricien,"40, Rue la Resistance BERKANE",35.2409953,-3.9335175,berkane
+Ababou,Zineb,Médecin généraliste,34 Rue Bir Anzarane BERKANE,35.7715688,-5.8157561,berkane
+Afoud,Fatiha,Médecin généraliste,43 Rue Moukaouama BERKANE,33.2426423,-8.5020242,berkane
+Atarraf,Ahmed,Médecin généraliste,"n°79, Rue de Fès BERKANE",34.0168091,-6.8237368,berkane
+Benadel,Mohammed,Médecin généraliste,"30, Rue Ibn Rochd BERKANE",33.5830835,-7.6394726,berkane
+Benchat,Mouhayaddine,Médecin généraliste,"123, Bd.Moulay Youssef BERKANE",33.6048393,-7.6336854,berkane
+Bensalem,Najib,Médecin généraliste,"1, Rue Moulay Idriss BERKANE",34.0196022,-6.8247435,berkane
+Berkhli,Boumediene,Médecin généraliste,"34, Rue Bir Anzarane BERKANE",35.7715688,-5.8157561,berkane
+Chaoui,Abdelkhalek,Médecin généraliste,"31, Rue Khalid Ibn Walid BERKANE",34.023245,-4.9942375,berkane
+Cherifi,Samia,Médecin généraliste,"156, Bd.Prince Heritier BERKANE",35.7721291,-5.8078753,berkane
+Chigri,El hassan,Médecin généraliste,"27, Rue Imam Ghazali BERKANE",34.9247736,-2.3303071,berkane
+El bekkaoui,Mohamed,Médecin généraliste,"23, Rue Bekkay Lahbil BERKANE",34.6807358,-1.935428,berkane
+El hadef,Fouzia,Médecin généraliste,"5, Bd. du 20 Aout BERKANE",30.4187882,-9.6046758,berkane
+El ouachekradi,Abdelhafid,Médecin généraliste,Bd. Hassan II BERKANE,30.423291,-9.6029367,berkane
+Kostas,Abdelkebir,Médecin généraliste,"241, Bd. Hassan II BERKANE",30.4100832,-9.5896587,berkane
+Marrakchi benjaafar,Mohamed,Médecin généraliste,7 Rue Khalid Ibn Oualid BERKANE,34.6872284,-1.9213844,berkane
+Saddiki,Hassan,Médecin généraliste,"40, Rue Tarik Ibn Ziad BERKANE",34.6821448,-1.9156728,berkane
+Znaidi,Taoufiq,Médecin généraliste,"105, Rue My Abdellah BERKANE",35.7775853,-5.8091098,berkane
+Messaoudi,Mohamed,Ophtalmologue,"53, rue de la résistance BERKANE",35.2409953,-3.9335175,berkane
+El badri,Ahmed,Pédiatre,"223, Bd. Hassan II BERKANE",30.4100832,-9.5896587,berkane
+Kribii,Abdelhafid,Pédiatre,"223, Bd. Hassan II BERKANE",30.4100832,-9.5896587,berkane
+Zahaf,Benyoub,Pneumologue,57 RUE DE FES BERKANE,34.0168091,-6.8237368,berkane
+Ayoubi,Hassan,Cardiologue,80 RUE IBN ROCHD BERRECHID,33.5830835,-7.6394726,berrechid
+El moutassil,Touria,Cardiologue,n°1 Rue Ibn Rochd BERRECHID,33.5830835,-7.6394726,berrechid
+El kadri,Jamal,Gynécologue obstétricien,Clinique CHAOUIA BERRECHID,35.6630844,-5.7655263,berrechid
+Bada,Mohammed,Médecin généraliste,1 bis Rue Ibn Rochd BERRECHID,33.5830835,-7.6394726,berrechid
+Dergamoun,Mustapha,Médecin généraliste,13 Rue Moussa Ibn Noussaïr BERRECHID,33.27,-7.5872884,berrechid
+El otmani,Abdellali,Médecin généraliste,"169, AVENUE MY ISMAIL BERRECHID",34.0188312,-6.8252144,berrechid
+El yakoubi,Charafa,Médecin généraliste,"16, Rue Oqba Ibn Nafii BERRECHID",32.9996735,-7.6207184,berrechid
+Essoubi,Abderrahim,Médecin généraliste,Av.Oued Tensift E n°363 BERRECHID,34.0629439,-6.7901785,berrechid
+Hadraoui,Driss,Médecin généraliste,160 Avenue Mohamed V BERRECHID,34.011815,-6.8302259,berrechid
+Hilmi,Bouchra,Médecin généraliste,17 Rue de Marrakech BERRECHID,33.268,−7.5830,berrechid
+Naanani,Hamid,Médecin généraliste,180 Av.Moulay ISMAIL BERRECHID,34.0188312,-6.8252144,berrechid
+Poitrot michel,Robert,Médecin généraliste,ROUTE DE MARRAKECH BERRECHID,33.5409353,-7.6406214,berrechid
+Mouhsine,Mustapha,Orthopédiste traumatologue,5 Rue Okba Ibn Nafii BERRECHID,34.227964,-3.3450066,berrechid
+Harakat,Hicham,Pédiatre,164 Bd.Hassan II BERRECHID,30.4100832,-9.5896587,berrechid
+Tayb,Abdellah,Pneumologue,87 Bd My Ismail BERRECHID,33.6009511,-7.5595786,berrechid
+Jmari,Mohamed,Médecin généraliste,Les Chalets (Rte.Agadir) BIOUGRA,33.2217021,-8.5555554,biougra
+El hanafi,Mostapha,Médecin généraliste,AVENUE MOUKAOUAMA BNI CHIKER,30.4107546,-9.5931331,bni chiker
+Rhanim,Fatima-zahra,Médecin généraliste,"211, Bd.El Massira BOUARFA",32.5310,−1.9630,bouarfa
+Benslimane,Anasse,Médecin généraliste,Centre TLAT BOUGUEDRA BOUGUEDRA,32.2547882,-8.9737326,tlat bouguedra
+Idoumghar,Nadia,Médecin généraliste,Av.Hassan II BOUIZAKARNE,33.9741922,-6.8788972,bouizakarne
+Titane,El houssine,Médecin généraliste,"19, Rue Bir Anzarane BOUIZAKARNE",35.7715688,-5.8157561,bouizakarne
+Badouri,Rahal,Médecin généraliste,MISSOUR BOULEMANE,33.047057,-3.992578,missour boulemane
+Daho,Abdellah,Médecin généraliste,OUTAT EL HAJ BOULEMANE,33.337366,-3.696438,outat el haj boulemane
+Rbia,Lahcen,Médecin généraliste,Av Hassan II BOULEMANE,33.9741922,-6.8788972,boulemane
+Mountassir,Ahmed,Médecin généraliste,Place Mosquée BOUMALNE-DADES,30.3739524,-9.5502019,dades
+Chebli,Abderrahmane,Médecin généraliste,26 Rue Oued Eddahab BOUZNIKA,35.7700003,-5.8176921,bouznika
+Zaanouni,Abderrahim,Médecin généraliste,17 Rue Bir Anzarane BOUZNIKA,35.7715688,-5.8157561,bouznika
+Alaoui bouhamid,Abdelhafid,Anatomopathologiste,52 BD.ZERKTOUNI CASABLANCA,33.5920964,-7.6366766,casablanca
+Benamour,Zahra,Anatomopathologiste,400 Bd. Brahim Roudani CASABLANCA,34.6792498,-1.8891121,casablanca
+Bennani laafirit,Najia,Anatomopathologiste,132 Avenue Hassan II CASABLANCA,33.991248,-6.8663216,casablanca
+Hamamsi,Mohamed taoufik,Anatomopathologiste,82 Rue Moussa Ibnou Noussaïr CASABLANCA,35.2464435,-3.9323511,casablanca
+Abassi,Omar,Anesthésiste,728? Bd Modibo Keita CASABLANCA,33.5626767,-7.6060757,casablanca
+Abdelmalki,Mansour,Anesthésiste,"54, Bd.Ghandi (Clinique Ghandi) CASABLANCA",33.5797465,-7.6570206,casablanca
+Amar,Abdelaziz,Anesthésiste,Centre Cardiologique CASABLANCA,33.5626127,-7.6301811,casablanca
+Benabdennbi,Faouzi,Anesthésiste,"13, Place du Nid d'Iris CASABLANCA",33.5882938,-7.6364982,casablanca
+Benazouz,Ahmed amine,Anesthésiste,202 Bd. Ziraoui CASABLANCA,33.5951287,-7.6330441,casablanca
+El yamani,Khalid,Anesthésiste,n°2 Rue Assanaoubar CASABLANCA,35.1546484,-2.9761397,casablanca
+Fkira,Mohammed kamal,Anesthésiste,92 Av Hassan II CASABLANCA,32.3342244,-6.363924,casablanca
+Gatra,Abdelaziz,Anesthésiste,"12, RUE OMAR SLAOUI CASABLANCA",33.58725,-7.6200063,casablanca
+Jabrane,Mostafa,Anesthésiste,"CLINIQUE AIN CHOCK 510, AVENUE 2 MARS CASABLANCA",33.5481369,-7.6020871,casablanca
+Komiha,Abdelaziz,Anesthésiste,"20, Rue FranceVille Clinique Oasis CASABLANCA",33.5620871,-7.6335753,casablanca
+Mekki berrada,Rachid,Anesthésiste,n°7 Rue Jean Jaurès CASABLANCA,33.590764,-7.629469,casablanca
+Squalli houssaini,Rachid,Anesthésiste,n°14 Rue de Berne CASABLANCA,33.582305,-7.6161814,casablanca
+Tajmouati,Mohamed,Anesthésiste,"Clinique rivièra, 301 Bd. Ghandi CASABLANCA",33.5675829,-7.6412064,casablanca
+Tamine,Jamal eddine,Anesthésiste,"9, RUE OUED ZEM CASABLANCA",34.0157651,-6.8281342,casablanca
+Azeddoug,Abdellah,Biologiste médical,119 BIR ANZARANE MAARIF CASABLANCA,33.5813913,-7.6391939,casablanca
+El haimer,Souad,Biologiste médical,"JAMILA 7, N°90 CITE DJEMAA CASABLANCA",33.5406828,-7.571388,casablanca
+Hda,Nazha,Biologiste médical,N°105 RUE D'AZILAL CASABLANCA,33.5928384,-7.6056524,casablanca
+Tarik,Jawad,Biologiste médical,BLOC 16 N° 5 SIDI OTHMANE CASABLANCA,33.5570072,-7.5603844,casablanca
+Alami,Mohamed,Cardiologue,264 BD.GHANDI CASABLANCA,33.5692167,-7.6438975,casablanca
+Belkhayat,Abdellatif,Cardiologue,76 Bd. du 11 Janvier CASABLANCA,33.5893272,-7.6135232,casablanca
+Benghazi akhlaki,Abdelhamid,Cardiologue,275 BOULEVARD ZERKTOUNI (CP: 20050) CASABLANCA,33.5921845,-7.6371472,casablanca
+Benjelloun,Khalid,Cardiologue,Polyclinique CNSS ZIRAOUI CASABLANCA,33.5958367,-7.6325219,casablanca
+Bennouna,Abdelaziz,Cardiologue,"265, BOULEVARD RAHAL EL MESKINI CASABLANCA",33.587738,-7.6134638,casablanca
+Bensafiddine,Soumia,Cardiologue,2 Rue Kadi Iass Maârif CASABLANCA,33.5861919,-7.6349881,casablanca
+Berrada baby,Abdelhaq,Cardiologue,115 Bd. Mohamed V CASABLANCA,35.1800319,-2.9251802,casablanca
+Chouladi,Abdelkhalek,Cardiologue,50 Rue Mustapha El Maâni CASABLANCA,32.9878522,-7.607265,casablanca
+Chraibi,Mohamed,Cardiologue,21 Rue Ibrahim Hafid CASABLANCA,33.5877718,-7.628656,casablanca
+Criquech,Mouad,Cardiologue,"262, rue yacoub el mansour CASABLANCA",33.9761687,-6.8964939,casablanca
+De vahia,Jean louis,Cardiologue,69 Rue Prince My Abdellah CASABLANCA,34.0176733,-6.8347012,casablanca
+El makhlouf,Ali,Cardiologue,5 Bd.Mohamed Abdou CASABLANCA,33.584567,-7.6262007,casablanca
+Essalai,Kekki,Cardiologue,34 Av. Lalla Yacout CASABLANCA,33.5905498,-7.6126175,casablanca
+Kabbage,Driss,Cardiologue,"60, RUE DE SMYRNE CASABLANCA",33.5736922,-7.6017371,casablanca
+Khattane,Abdellah,Cardiologue,37 BOULEVARD 11 JANVIER (REZ DE CHAUSSEE) CASABLANCA,33.6955811,-7.3802143,casablanca
+Lebbar,Mohamed,Cardiologue,AV.2 MARS CASABLANCA,33.5600531,-7.608608,casablanca
+Ouazzani touhami,Mohammed,Cardiologue,"17, AVENUE DES F.A.R CASABLANCA",32.6585088,-8.4302018,casablanca
+Rifai,Hamid,Cardiologue,"57, Avenue HASSAN II CASABLANCA",33.991248,-6.8663216,casablanca
+Skalli,Mostafa,Cardiologue,400 Bd.BRAHIM ROUDANI CASABLANCA,34.6792498,-1.8891121,casablanca
+Slaoui,Abdelouhab,Cardiologue,"n°209, Bd.D'ANFA CASABLANCA",33.5912309,-7.6355969,casablanca
+Tagmouti,Fouad,Cardiologue,69 Rue Prince My Abdellah CASABLANCA,34.0176733,-6.8347012,casablanca
+Zoheir,Fatima,Cardiologue,Polyclinique CNSS Derb Ghallef CASABLANCA,33.2595485,-8.5120308,casablanca
+Faris,Bouchaib,Chirurgien cardiaque,19 Av. Ibn Sina (Centre Cardiologique) CASABLANCA,33.996874,-6.8512163,casablanca
+Alami,Abdeljaouad,Chirurgien généraliste,"47, Bd. Rahal El Meskini CASABLANCA",33.587738,-7.6134638,casablanca
+Amor,Said,Chirurgien généraliste,75 Bd. Moulay Youssef CASABLANCA,33.6048393,-7.6336854,casablanca
+Bengelloun,Mounir,Chirurgien généraliste,"n°8, Bd. Khouribga CASABLANCA",33.5898354,-7.6051717,casablanca
+Bouazzaoui,Ahmed,Chirurgien généraliste,12-14 Rue Omar Slaoui CASABLANCA,33.58725,-7.6200063,casablanca
+El mansouri,My abdelilah,Chirurgien généraliste,"105, Bd. d'Anfa CASABLANCA",33.5912309,-7.6355969,casablanca
+Fikri,Fouad,Chirurgien généraliste,120 Bd. Idriss 1er. CASABLANCA,33.5747899,-7.610019,casablanca
+Hafdi,Faycal,Chirurgien généraliste,n°47 Av. HASSAN II CASABLANCA,33.9741922,-6.8788972,casablanca
+Harit,Mohammed,Chirurgien généraliste,45 Rue PRINCE MOULAY ABDELLAH CASABLANCA,34.0176733,-6.8347012,casablanca
+Hassine tadlaoui,Abdelfettah,Chirurgien généraliste,"n°12, BD. D'ANFA CASABLANCA",33.5912309,-7.6355969,casablanca
+Hosni,Abdelkader,Chirurgien généraliste,Polyclinique C.N.S.S. CASABLANCA,30.4222859,-9.6046474,casablanca
+Ibnoulkhatib,Rachid,Chirurgien généraliste,POLYCLINIQUE CNSS BOURGOGNE CASABLANCA,33.5985679,-7.6418596,casablanca
+Jamil,Mohammed,Chirurgien généraliste,Bd.Ziraoui Polyclinique CNSS CASABLANCA,33.5951287,-7.6330441,casablanca
+Jbara,Mohamed,Chirurgien généraliste,n°336 Bd. El Fida CASABLANCA,33.5714281,-7.5872884,casablanca
+Kettani,Abdeljalil,Chirurgien généraliste,75 Bd.CHEFCHAOUNI Aïn SEBAA CASABLANCA,33.6130078,-7.5281049,casablanca
+Kharoub,El khadir,Chirurgien généraliste,n°8 Bd. Yacoub El Mansour CASABLANCA,33.5695356,-7.6522997,casablanca
+Kouddane,Khalid,Chirurgien généraliste,277 Avenue du 2 MARS CASABLANCA,31.5167819,-9.7611894,casablanca
+Laabi,Abdelali,Chirurgien généraliste,AVENUE B SIDI BERNOUSSI CASABLANCA,33.6080485,-7.4956419,casablanca
+Lfadeli,Abdelhakim,Chirurgien généraliste,70 BOULEVARD AFGHANISTAN CASABLANCA,33.5681575,-7.6834683,casablanca
+Madani,Ahmed,Chirurgien généraliste,n°91 Av. Mers Sultan CASABLANCA,33.5855879,-7.6163859,casablanca
+Mechat,Fawz,Chirurgien généraliste,10 Rue Ben Dahane CASABLANCA,33.5751418,-7.6046174,casablanca
+Najioullah,Hakim,Chirurgien généraliste,"67, AVENUE DES F.A.R CASABLANCA",32.6585088,-8.4302018,casablanca
+Radhi,Noureddine,Chirurgien généraliste,158 BOULEVARD D'ANFA CASABLANCA,33.5905068,-7.6380579,casablanca
+Saher,Fouad,Chirurgien généraliste,"115 Bd. Mohamed V, 20000 CASABLANCA",33.2831052,-7.5911924,casablanca
+Salmi,El yazid,Chirurgien généraliste,33 Bd. Bir Anzarane Maârif CASABLANCA,33.5800593,-7.6370592,casablanca
+Sefrioui,Abdelali,Chirurgien généraliste,138 Av. MERS SULTAN CASABLANCA,33.5855879,-7.6163859,casablanca
+Sefrioui,Abderrahim,Chirurgien généraliste,"165, AV.ABDELMOUMEN CASABLANCA",34.0226615,-6.8303297,casablanca
+Sentissi idrissi,Abdelmalek,Chirurgien généraliste,206 Av. Mers Sultan (Polycli.) CASABLANCA,33.5855879,-7.6163859,casablanca
+Souiri,Abdelmajid,Chirurgien généraliste,Polyclinique CNSS Ziraoui CASABLANCA,33.5958367,-7.6325219,casablanca
+Touzani,Mohamed kamal,Chirurgien généraliste,n°97 Bd. Mohamed V CASABLANCA,35.1800319,-2.9251802,casablanca
+Arsalane,El mostafa,Chirurgien pédiatrique,9 Rue Kadi Iass Maârif CASABLANCA,33.585956,-7.6356742,casablanca
+Dahreddine,Mohamed,Chirurgien pédiatrique,739 Route.Mediouna (Prés Ciné.El Beida) CASABLANCA,33.564391,-7.5953157,casablanca
+Harouchi,Abderrahim,Chirurgien pédiatrique,34 Rue charm el cheikh CASABLANCA,33.5827323,-7.6290201,casablanca
+Laraki-el houssaini,Bouchra,Chirurgien pédiatrique,131 BOULEVARD ABDELMOUMEN CASABLANCA,33.5639303,-7.6273244,casablanca
+Mekouar,Rochdi,Chirurgien pédiatrique,n°52 Bd. Zerktouni CASABLANCA,33.5888708,-7.6338042,casablanca
+Refass,Abdelouahed,Chirurgien pédiatrique,237 Bd. Zerktouni CASABLANCA,33.5903249,-7.6359013,casablanca
+Cochain,Jean pierre,Chirurgien plasticien,n°2 Bd. du 9 Avril (Cli. Cochain) P CASABLANCA,33.5819115,-7.6312492,casablanca
+Guessous,Mohamed jamal,Chirurgien plasticien,73 Av. Lalla Yacout CASABLANCA,33.5905498,-7.6126175,casablanca
+Kari,Peter,Chirurgien plasticien,"7, RUE JEAN JAURES CASABLANCA",33.590764,-7.629469,casablanca
+Mezian amor,Rachid,Chirurgien plasticien,"27, Rue Khaouarizmi (Lacepede) CASABLANCA",33.5934712,-7.6256952,casablanca
+Tazi,El hassane,Chirurgien plasticien,43 Rue Sebou (ex;Artois) Gauthier CASABLANCA,33.5894538,-7.6313738,casablanca
+Abouyoub,Omar,Dermatologue,n°227 Bd. Mohamed V CASABLANCA,35.1800319,-2.9251802,casablanca
+Afailal,Aziza,Dermatologue,393 Rue Mostapha El Maâni CASABLANCA,35.1700955,-2.9215164,casablanca
+Alaoui el hassani,Siham,Dermatologue,"209, Bd.de la Résistance CASABLANCA",33.5928366,-7.6035877,casablanca
+Bennani,Said,Dermatologue,30 Rue du Marché MAARIF CASABLANCA,33.5845097,-7.6333676,casablanca
+Bennouna,Zhar jamil,Dermatologue,161 Bd. Rahal El Meskini CASABLANCA,33.587738,-7.6134638,casablanca
+Berrada,Abdelmajid,Dermatologue,76 Bd.du 11 Janvier CASABLANCA,33.5893272,-7.6135232,casablanca
+Bichara,Mohamed,Dermatologue,4 Bd. Mohamed Zerktouni CASABLANCA,33.5920964,-7.6366766,casablanca
+Boufaim,Houria,Dermatologue,Polyclinique CNSS Ziraoui CASABLANCA,33.5958367,-7.6325219,casablanca
+Bou-ouhrich,Mohamed,Dermatologue,"n°356, Bd. El Fida CASABLANCA",33.5714281,-7.5872884,casablanca
+Bourra,Ahmed,Dermatologue,19 Place 16 Novembre CASABLANCA,33.5945197,-7.6168641,casablanca
+Devico,Victory,Dermatologue,218 Av.Ambassadeur Ben Aïcha CASABLANCA,33.598305,-7.5924452,casablanca
+El alouf,Chalom,Dermatologue,"273, BD.MOHAMED V CASABLANCA",35.1800319,-2.9251802,casablanca
+Asri,Mohamed,Cardiologue,Boulevard Mekka LAAYOUNE,27.149,-13.1989,laayoune
+El qadiri boutchich,Med.abdess,Radiologue,n°164 Avenue de la Mecque LAAYOUNE,27.1482,-13.1995,laayoune
+Abouzaid,Hamdnah,Médecin généraliste,"308, Avenue Makka LAAYOUNE",27.1478,-13.2001,laayoune
+El amine,Nadia,Médecin généraliste,"142, Avenue Boukraâ LAAYOUNE",27.1512,-13.1978,laayoune
+Sakaly,Abdelhafid,Médecin généraliste,"21, Av.Sakia Al Hamra LAAYOUNE",27.1503,-13.1969,laayoune
+El andaloussi,Maria,Anatomopathologiste,"186, Avenue Mohamed V MARRAKECH",34.0194935,-6.836793,marrakech
+Marrat,Abdelouahed,Anatomopathologiste,"70, Rue Liberté Guéliz (Labo.Zohour) MARRAKECH",31.6363141,-8.0104575,marrakech
+Ajana,Khalid,Anesthésiste,"2, Rue Yougoslavie (Polycli.du Sud) MARRAKECH",45.1911848,5.7248584,marrakech
+Tadili,Mohamed reda,Anesthésiste,Polyclinique CNSS Rte.Targa MARRAKECH,35.4003657,-1.2384563,marrakech
+El yahiaoui,Youssef,Cardiologue,"10, Rue Tarik Ibn Ziad MARRAKECH",34.6821448,-1.9156728,marrakech
+Aboufirass,Abdellatif,Chirurgien généraliste,"17, Rue Yougoslavie MARRAKECH",34.0207671,-6.8356617,marrakech
+Ait khouya,Abdellatif,Chirurgien généraliste,"2, Rue Ibn Aïcha - Guéliz MARRAKECH",31.6385128,-8.017761,marrakech
+Djoudi mohamed,Abdelaziz,Chirurgien généraliste,"Rue Moulay Ismaïl, Médina MARRAKECH",31.6230153,-7.9908712,marrakech
+El hamidi,Abderrahman,Chirurgien généraliste,"76, Rue Ibn Toumert MARRAKECH",31.6353264,-8.0071794,marrakech
+Majid,Jamal-eddine,Chirurgien généraliste,Polyclinique CNSS Rte.Targa MARRAKECH,35.4003657,-1.2384563,marrakech
+Perez,Moise,Chirurgien généraliste,171 Avenue Mohamed V MARRAKECH,34.0254711,-6.8398656,marrakech
+Taouil,Abdelali,Radiologue,Polyclinique CNSS Rte.Targa MARRAKECH,35.4003657,-1.2384563,marrakech
+El guermai,Mohamed najib,Endocrinologue,"34, Bd. Zerktouni MARRAKECH",33.5836216,-7.6252713,marrakech
+Bellon,Claire,Gynécologue obstétricien,"5, Rue Sourya MARRAKECH",31.6347318,-8.0102582,marrakech
+El ghorfi,Mohamed jamal,Gynécologue obstétricien,"43, Bd. Zerktouni (Maison de Traite) MARRAKECH",33.5836216,-7.6252713,marrakech
+Nassaf,Mohammed,Gynécologue obstétricien,"86, Av Mohamed V MARRAKECH",34.0254711,-6.8398656,marrakech
+Mghazli,Mohamed azzam,Médecin du sport,"213, Bd. Mohamed V MARRAKECH",36.7681291,3.0527696,marrakech
+Al wardi baha eldin,Jabbar,Médecin généraliste,"58, Bab Agnaou, Médina MARRAKECH",31.6224547,-7.9899066,marrakech
+Amghar,Aicha,Médecin généraliste,52 RUE RMILA MARRAKECH,36.8878287,10.3066405,marrakech
+Ammor,Iz-arab,Médecin généraliste,"213, Av.Mohamed V MARRAKECH",34.0254711,-6.8398656,marrakech
+Arrad,Ahmed,Médecin généraliste,"45, Rue Bab Agnaou, Médina MARRAKECH",31.6224547,-7.9899066,marrakech
+Baji,Khalid,Médecin généraliste,"183, Av Mohamed V MARRAKECH",34.0254711,-6.8398656,marrakech
+Battoum,Hassan,Médecin généraliste,"29, Rue Yougoslavie Guéliz MARRAKECH",31.6332476,-8.013529,marrakech
+Bel bachir,Khadija,Médecin généraliste,Polyclinique CNSS Rte.Targa MARRAKECH,35.4003657,-1.2384563,marrakech
+Belmezouar,Samir,Médecin généraliste,Bab Kechich n°79 Médina MARRAKECH,31.6393901,-7.9832456,marrakech
+Ben chekroun,Teib,Médecin généraliste,"18, Rue Bab Agnaou, Médina MARRAKECH",31.6224547,-7.9899066,marrakech
+Benameur,Said,Médecin généraliste,6 Rue de la liberté MARRAKECH,48.88056,2.392654,marrakech
+Bennani,Taoufik,Médecin généraliste,Polyclinique du Sud Rue Yougoslavie MARRAKECH,31.6377786,-8.0146531,marrakech
+Bentaleb,Hassan,Médecin généraliste,Centre de Tnine OUDAYA MARRAKECH,31.6338889,-8.2509946,marrakech
+Bouhad farid,Chawki,Médecin généraliste,"N°63, Bab Doukkala Boutouil MARRAKECH",31.6349884,-7.9982416,marrakech
+Boutfouste,Naima,Médecin généraliste,Centre Santé Mouassine MARRAKECH,31.6324575,-7.9826457,marrakech
+Contamanou evangelia,Lina,Médecin généraliste,"28, Rue de la Liberté MARRAKECH",44.8408419,-0.6003294,marrakech
+El mansouri,Abdelghani,Médecin généraliste,"14, Av. Houman El Fetouaki MARRAKECH",31.6225834,-7.9898439,marrakech
+Ellorhaoui,Ahmed,Médecin généraliste,"92, Bd. Zerktouni MARRAKECH",33.5888412,-7.6339697,marrakech
+Errajraji,Seddik,Médecin généraliste,ASSIF B N°307 MARRAKECH,31.6543389,-8.0056702,marrakech
+Essrhir,Abdeslam,Médecin généraliste,Polyclinique de Sud Rue Yougoslavie MARRAKECH,35.6567444,10.0925984,marrakech
+Fassi fihri,Abdelkader,Médecin généraliste,Polyclinique de la C.N.S.S MARRAKECH,-8.9949646,13.2760246,marrakech
+Houssaini,Amal,Médecin généraliste,"55, Boutouil Kasbah MARRAKECH",31.624704,-7.9846083,marrakech
+Ihfa,Abdelhadi,Médecin généraliste,"9, Boulevard de Safi MARRAKECH",31.638319,-8.0034984,marrakech
+Khayat,Samira,Médecin généraliste,Polyclinique CNSS Targa MARRAKECH,35.4181291,-1.1782222,marrakech
+Laalou,Abdelghani,Médecin généraliste,"138, Bd.Mohamed V MARRAKECH",36.7681291,3.0527696,marrakech
+Laraqui,Saida,Médecin généraliste,Polyclinique CNSS. Rte.Targa MARRAKECH,35.4003657,-1.2384563,marrakech
+Mghari,Abderrazak,Médecin généraliste,"396, Massira II B MARRAKECH",34.6790372,-1.8998767,marrakech
+Michaelis gertrud,Anna,Médecin généraliste,7 Rue Ibn Sina MARRAKECH,31.6389726,-8.0130668,marrakech
+Smires,Mustapha,Médecin généraliste,"80, Boutouil Bab Doukkala MARRAKECH",31.6349884,-7.9982416,marrakech
+El hilali,Faical,Interniste,"90, Bd. Zerktouni n°29 MARRAKECH",33.5888412,-7.6339697,marrakech
+Tomnouli,Mohamed najib,Oncologue,"12, Rue Sourya Guéliz MARRAKECH",31.6352003,-8.0093202,marrakech
+Alami merrouni,Youssef,Ophtalmologue,"29, Rue Yougoslavie Guéliz MARRAKECH",31.6332476,-8.013529,marrakech
+Benhamou,Armand,Ophtalmologue,Rue Ibn Toumert Guéliz MARRAKECH,31.6376566,-8.0086969,marrakech
+Bichara,Rachid,Ophtalmologue,"183, Bd. Mohamed V MARRAKECH",36.7681291,3.0527696,marrakech
+Jamali,Azzeddine,Ophtalmologue,"213, Av. Mohamed V MARRAKECH",34.0254711,-6.8398656,marrakech
+Laraqui,Jaouad,Ophtalmologue,"2, Rue Ibn Aïcha MARRAKECH",31.6385128,-8.017761,marrakech
+Bentbib,Brahim,ORL,"213 Av.Mohamed V, n°23 MARRAKECH",34.0254711,-6.8398656,marrakech
+Machraoui,Said,ORL,29 Rue Yougoslavie MARRAKECH,34.0207671,-6.8356617,marrakech
+El kairaouani,Abdeslam,Gastro-entérologue,48 Rue la Liberté Guéliz MARRAKECH,31.6356373,-8.0114897,marrakech
+Smili,Ahmed,Gastro-entérologue,"43, Bd. Zerktouni MARRAKECH",33.5836216,-7.6252713,marrakech
+El baroudi,Khadija,Pédiatre,"82 Av. Hassan II, Guéliz MARRAKECH",31.6309719,-8.0127389,marrakech
+El bellaj,Soumia,Pédiatre,Av.Hassan II (en face la Gendarmeri) App.2 MARRAKECH,34.0100778,-6.8527813,marrakech
+Jerczynska nee,Wrobel,Pédiatre,6 Rue de la Liberté Guéliz MARRAKECH,31.6356373,-8.0114897,marrakech
+Khaldoun,Naima,Pédiatre,"29, Rue Yougoslavie Guéliz MARRAKECH",31.6332476,-8.013529,marrakech
+Bousta,Abdellatif,Pneumologue,"183, Av.Mohamed V MARRAKECH",34.0254711,-6.8398656,marrakech
+Ayatt,Miloudi,Psychiatre,"68, Rue de la Liberté, Guéliz MARRAKECH",31.6361521,-8.0107043,marrakech
+El baroudi amine,Nezha,Rhumatologue,82 Av.Hassan II - Guéliz MARRAKECH,31.6309719,-8.0127389,marrakech
+Zizi,Mohamed,Rhumatologue,"183, Av. Mohamed V MARRAKECH",34.0254711,-6.8398656,marrakech

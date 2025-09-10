@@ -2,6 +2,7 @@ package com.rabia.backendmedassistant.controller;
 
 import com.rabia.backendmedassistant.model.Medecin;
 import com.rabia.backendmedassistant.model.Utilisateur;
+import com.rabia.backendmedassistant.model.Ville;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
 import com.rabia.backendmedassistant.repository.UtilisateurRepository;
 import com.rabia.backendmedassistant.service.GeocodingService;
@@ -12,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/medecins")
@@ -20,11 +20,12 @@ import java.util.Map;
 public class MedecinController {
 
     private final MedecinService medecinService;
+
     @Autowired
     private MedecinRepository medecinRepository;
+
     @Autowired
     private final UtilisateurRepository utilisateurRepository;
-
 
     @Autowired
     private GeocodingService geocodingService;
@@ -55,20 +56,18 @@ public class MedecinController {
         }
     }
 
+    // 🔹 Endpoint pour mettre à jour le profil du médecin
     @PutMapping("/{id}")
     public ResponseEntity<Medecin> updateMedecinProfile(
             @PathVariable Long id,
             @RequestBody Medecin updatedMedecin) {
 
         return medecinRepository.findById(id).map(existing -> {
-            // Infos de base
             if (updatedMedecin.getNom() != null) existing.setNom(updatedMedecin.getNom());
             if (updatedMedecin.getPrenom() != null) existing.setPrenom(updatedMedecin.getPrenom());
             if (updatedMedecin.getAdresseCabinet() != null) existing.setAdresseCabinet(updatedMedecin.getAdresseCabinet());
             if (updatedMedecin.getBio() != null) existing.setBio(updatedMedecin.getBio());
             if (updatedMedecin.getSpecialite() != null) existing.setSpecialite(updatedMedecin.getSpecialite());
-
-            // ✅ Nouveaux attributs
             if (updatedMedecin.getDiplomes() != null) existing.setDiplomes(updatedMedecin.getDiplomes());
             if (updatedMedecin.getLanguesParlees() != null) existing.setLanguesParlees(updatedMedecin.getLanguesParlees());
             if (updatedMedecin.getAnneesExperience() != null) existing.setAnneesExperience(updatedMedecin.getAnneesExperience());
@@ -78,7 +77,11 @@ public class MedecinController {
         }).orElse(ResponseEntity.notFound().build());
     }
 
-
+    // 🔹 Endpoint pour récupérer toutes les villes
+    @GetMapping("/cities")
+    public List<Ville> getCities() {
+        return medecinService.getCities();
+    }
 
     @GetMapping
     public List<Medecin> getAllMedecins() {

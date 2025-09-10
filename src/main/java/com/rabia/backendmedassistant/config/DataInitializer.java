@@ -5,41 +5,44 @@ import com.rabia.backendmedassistant.model.Medecin;
 import com.rabia.backendmedassistant.model.Role;
 import com.rabia.backendmedassistant.model.Specialite;
 import com.rabia.backendmedassistant.model.Utilisateur;
+import com.rabia.backendmedassistant.model.Ville;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
 import com.rabia.backendmedassistant.repository.SpecialiteRepository;
 import com.rabia.backendmedassistant.repository.UtilisateurRepository;
+import com.rabia.backendmedassistant.repository.VilleRepository;
+import com.rabia.backendmedassistant.service.GeocodingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
-
-import java.io.FileReader;
-import java.util.List;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
 
     private final MedecinRepository medecinRepository;
     private final UtilisateurRepository utilisateurRepository;
-
     private final SpecialiteRepository specialiteRepository;
-    int counter = 1; // compteur global
+    private final VilleRepository villeRepository;
+    private final GeocodingService geocodingService;
+    private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    int counter = 1;
 
     @Autowired
-    public DataInitializer(MedecinRepository medecinRepository, UtilisateurRepository utilisateurRepository, SpecialiteRepository specialiteRepository) {
+    public DataInitializer(MedecinRepository medecinRepository, UtilisateurRepository utilisateurRepository,
+                           SpecialiteRepository specialiteRepository, VilleRepository villeRepository,
+                           GeocodingService geocodingService) {
         this.medecinRepository = medecinRepository;
         this.utilisateurRepository = utilisateurRepository;
         this.specialiteRepository = specialiteRepository;
+        this.villeRepository = villeRepository;
+        this.geocodingService = geocodingService;
     }
 
     @Override
     public void run(String... args) throws Exception {
-
-    /*    try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
+        try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
             String[] line;
             boolean isHeader = true;
-            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
 
             while ((line = reader.readNext()) != null) {
                 if (isHeader) {
@@ -51,6 +54,7 @@ public class DataInitializer implements CommandLineRunner {
                 String prenom = line[1].trim();
                 String specialiteNom = line[2].trim();
                 String adresse = line[3].trim();
+                String villeNom = line[6].trim();
 
                 Double lat = null;
                 Double lng = null;
@@ -61,7 +65,21 @@ public class DataInitializer implements CommandLineRunner {
                     System.out.println("⚠ Coordonnées invalides pour " + nom + " " + prenom);
                 }
 
-                // Vérifier ou créer la spécialité
+                // Gestion ville
+                Ville ville = villeRepository.findByNom(villeNom);
+                if (ville == null) {
+                    ville = new Ville();
+                    ville.setNom(villeNom);
+
+                    double[] coords = geocodingService.geocode(villeNom);
+                    ville.setLat(coords[0]);
+                    ville.setLng(coords[1]);
+
+                    villeRepository.save(ville);
+                    System.out.println("✅ Ville ajoutée : " + villeNom + " (" + coords[0] + ", " + coords[1] + ")");
+                }
+
+                // Gestion spécialité
                 Specialite sp = specialiteRepository.findByNom(specialiteNom);
                 if (sp == null) {
                     sp = new Specialite();
@@ -86,17 +104,16 @@ public class DataInitializer implements CommandLineRunner {
                 medecin.setLat(lat);
                 medecin.setLng(lng);
                 medecin.setSpecialite(sp);
-                medecin.setUtilisateur(utilisateur); // 🔗 lien avec utilisateur
+                medecin.setVille(ville);
+                medecin.setUtilisateur(utilisateur); // Lien avec utilisateur
 
                 medecinRepository.save(medecin);
-
                 System.out.println("✅ Médecin " + nom + " créé avec email: " + email + " / mot de passe: " + motDePasseClair);
 
                 counter++;
             }
         } catch (Exception e) {
             e.printStackTrace();
-        } */
-
+        }
     }
 }
