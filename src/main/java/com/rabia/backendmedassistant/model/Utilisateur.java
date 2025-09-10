@@ -11,6 +11,8 @@ public class Utilisateur {
     private Long id;
 
     private String nom;
+    
+    @Column(unique = true, nullable = false)
     private String email;
     private String telephone;
     private String motDePasse; 

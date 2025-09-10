@@ -3,8 +3,11 @@ package com.rabia.backendmedassistant.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabia.backendmedassistant.model.Medecin;
+import com.rabia.backendmedassistant.model.Role;
+import com.rabia.backendmedassistant.model.Utilisateur;
 import com.rabia.backendmedassistant.model.Ville;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
+import com.rabia.backendmedassistant.repository.UtilisateurRepository;
 import com.rabia.backendmedassistant.repository.VilleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,21 +16,21 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.Normalizer;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import java.text.Normalizer;
-
 
 @Service
 public class MedecinService {
 
     private final MedecinRepository medecinRepository;
+    private final UtilisateurRepository utilisateurRepository;
     private final VilleRepository villeRepository;
-    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private final PasswordEncoder passwordEncoder;
     private final RestTemplate restTemplate = new RestTemplate();
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -35,9 +38,17 @@ public class MedecinService {
     private String orsApiKey;
 
     @Autowired
-    public MedecinService(MedecinRepository medecinRepository, VilleRepository villeRepository) {
+    private GeocodingService geocodingService;
+
+    @Autowired
+    public MedecinService(MedecinRepository medecinRepository,
+                          UtilisateurRepository utilisateurRepository,
+                          VilleRepository villeRepository,
+                          PasswordEncoder passwordEncoder) {
         this.medecinRepository = medecinRepository;
+        this.utilisateurRepository = utilisateurRepository;
         this.villeRepository = villeRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public List<Ville> getCities() {
@@ -241,6 +252,21 @@ public class MedecinService {
         String rawPassword = generateRandomPassword();
         String encodedPassword = passwordEncoder.encode(rawPassword);
         medecin.setMotDePasse(encodedPassword);
+        return medecinRepository.save(medecin);
+    }
+
+    public Medecin addMedecin(Medecin medecin) {
+        if (medecin.getUtilisateur() == null) {
+            throw new IllegalArgumentException("Un médecin doit avoir un compte utilisateur associé.");
+        }
+
+        Utilisateur utilisateur = medecin.getUtilisateur();
+        utilisateur.setRole(Role.MEDECIN);
+        utilisateur.setMotDePasse(passwordEncoder.encode(utilisateur.getMotDePasse()));
+
+        Utilisateur savedUser = utilisateurRepository.save(utilisateur);
+
+        medecin.setUtilisateur(savedUser);
         return medecinRepository.save(medecin);
     }
 
