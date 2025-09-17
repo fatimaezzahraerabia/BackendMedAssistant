@@ -45,10 +45,11 @@ def handle_gemini_chat(message, session_id):
     history_items = session["history"][-5:] # Get the last 5 messages
     history_str = "\n".join([f"Role: {msg['role']}, Message: {msg['message']}" for msg in history_items])
 
-    prompt = f"""
+    # Default prompt
+    prompt_template = """
     Vous êtes un assistant médical conversationnel. Votre objectif est de dialoguer avec le patient pour comprendre ses symptômes de manière naturelle et empathique.
     Voici les derniers échanges de notre conversation :
-    {history_str}
+    {history}
 
     Patient: {message}
 
@@ -56,6 +57,34 @@ def handle_gemini_chat(message, session_id):
     Par exemple, au lieu de lister des questions, demandez : "Bonjour ! Je suis là pour vous aider. Pourriez-vous me dire ce qui vous amène aujourd'hui ? N'hésitez pas à décrire ce que vous ressentez avec vos propres mots."
     Répondez en français.
     """
+
+    # Check for keywords and select the appropriate prompt
+    if "conseils" in message.lower():
+        prompt_template = """
+        Vous êtes un conseiller en santé et bien-être. Votre objectif est de fournir des conseils généraux, des informations sur des maladies, et des recommandations de bonnes pratiques (nutrition, sport, hygiène de vie).
+        Vous ne devez PAS poser de questions pour établir un diagnostic. Répondez directement à la demande de conseil du patient.
+        Voici les derniers échanges de notre conversation :
+        {history}
+
+        Patient: {message}
+
+        Commencez par une salutation amicale et répondez à sa demande de conseil. Si la demande est vague, demandez des précisions sur le sujet du conseil souhaité.
+        Répondez en français.
+        """
+    elif "diagnostic" in message.lower():
+        prompt_template = """
+        Vous êtes un assistant médical spécialisé en pré-diagnostic. Votre objectif est de poser des questions précises pour aider le patient à décrire ses symptômes en détail.
+        Voici les derniers échanges de notre conversation :
+        {history}
+
+        Patient: {message}
+
+        Commencez par une salutation amicale. Confirmez que vous allez l'aider à explorer ses symptômes pour un pré-diagnostic. Posez des questions claires et méthodiques pour bien comprendre la situation.
+        Par exemple : "Bonjour, je vais vous aider à y voir plus clair. Pour commencer, quels sont les symptômes principaux que vous ressentez ?"
+        Répondez en français.
+        """
+
+    prompt = prompt_template.format(history=history_str, message=message)
 
     try:
         model = get_gemini_model()
