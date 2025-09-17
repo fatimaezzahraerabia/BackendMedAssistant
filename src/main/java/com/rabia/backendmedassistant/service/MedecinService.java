@@ -1,6 +1,5 @@
 package com.rabia.backendmedassistant.service;
 
-import aj.org.objectweb.asm.commons.Remapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabia.backendmedassistant.model.*;
@@ -8,12 +7,17 @@ import com.rabia.backendmedassistant.repository.MedecinRepository;
 import com.rabia.backendmedassistant.repository.SpecialiteRepository;
 import com.rabia.backendmedassistant.repository.UtilisateurRepository;
 import com.rabia.backendmedassistant.repository.VilleRepository;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.text.Normalizer;
@@ -23,10 +27,13 @@ import java.util.stream.Collectors;
 @Service
 public class MedecinService {
 
+    private static final Logger logger = LoggerFactory.getLogger(MedecinService.class);
+
     private final MedecinRepository medecinRepository;
     private final SpecialiteRepository specialiteRepository;
     private final UtilisateurRepository utilisateurRepository;
     private final VilleRepository villeRepository;
+    private final GeocodingService geocodingService;
     private final PasswordEncoder passwordEncoder;
     private final RestTemplate restTemplate = new RestTemplate();
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -35,14 +42,9 @@ public class MedecinService {
     private String orsApiKey;
 
     @Autowired
-    private GeocodingService geocodingService;
-
-    @Autowired
     public MedecinService(MedecinRepository medecinRepository, SpecialiteRepository specialiteRepository,
-                          UtilisateurRepository utilisateurRepository,
-                          VilleRepository villeRepository,
-                          GeocodingService geocodingService,
-                          PasswordEncoder passwordEncoder) {
+                          UtilisateurRepository utilisateurRepository, VilleRepository villeRepository,
+                          GeocodingService geocodingService, PasswordEncoder passwordEncoder) {
         this.medecinRepository = medecinRepository;
         this.specialiteRepository = specialiteRepository;
         this.utilisateurRepository = utilisateurRepository;
@@ -59,18 +61,18 @@ public class MedecinService {
 
     public List<Medecin> findNearest(double lat, double lng, String query, int limit, double radius) {
         List<Medecin> allMedecins = medecinRepository.findAll();
-        System.out.println("Total médecins chargés: " + allMedecins.size());
+        logger.info("Total médecins chargés: {}", allMedecins.size());
 
         List<Medecin> filtered = allMedecins;
         if (query != null && !query.isEmpty()) {
             filtered = filterByQuery(allMedecins, query);
-            System.out.println("Médecins après filtre query '" + query + "': " + filtered.size());
+            logger.info("Médecins après filtre query '{}': {}", query, filtered.size());
         }
 
         // Fallback: Si 0 après filtre, utiliser tous dans radius
         if (filtered.isEmpty() && query != null && !query.isEmpty()) {
             filtered = allMedecins;
-            System.out.println("Fallback: Utilise tous les médecins dans radius " + radius + "km.");
+            logger.info("Fallback: Utilise tous les médecins dans radius {}km.", radius);
         }
 
         // Pré-filtre par distance Haversine (rayon élargi pour compenser les routes)
@@ -108,10 +110,9 @@ public class MedecinService {
                     m.setDistance((Double) metrics.get("distance"));
                     m.setDrivingDuration((String) metrics.get("drivingDuration"));
                     m.setWalkingDuration((String) metrics.get("walkingDuration"));
-                    System.out.println("Médecin inclus: " + m.getNom() + " " + m.getPrenom() +
-                            ", Distance: " + metrics.get("distance") + "km" +
-                            ", Voiture: " + metrics.get("drivingDuration") +
-                            ", À pied: " + metrics.get("walkingDuration"));
+                    logger.info("Médecin inclus: {} {}, Distance: {}km, Voiture: {}, À pied: {}",
+                            m.getNom(), m.getPrenom(), metrics.get("distance"),
+                            metrics.get("drivingDuration"), metrics.get("walkingDuration"));
                 })
                 .collect(Collectors.toList());
     }
@@ -119,7 +120,7 @@ public class MedecinService {
     private Map<Medecin, Map<String, Object>> getRealMetrics(double originLat, double originLng, List<Medecin> medecins) {
         Map<Medecin, Map<String, Object>> metrics = new HashMap<>();
         if (medecins.isEmpty()) {
-            System.out.println("Aucun médecin à calculer pour les métriques.");
+            logger.warn("Aucun médecin à calculer pour les métriques.");
             return metrics;
         }
 
@@ -152,7 +153,7 @@ public class MedecinService {
         // Appeler l'API Matrix
         String url = "https://api.openrouteservice.org/v2/matrix/" + profile;
         try {
-            System.out.println("Appel à l'API ORS pour " + profile);
+            logger.info("Appel à l'API ORS pour {}", profile);
             ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
             JsonNode root = objectMapper.readTree(response.getBody());
             JsonNode distancesNode = distanceKey != null ? root.path("distances").get(0) : null;
@@ -175,7 +176,7 @@ public class MedecinService {
                 mMetrics.put(durationKey, durationMin != null ? formatDuration(durationMin) : "N/A");
             }
         } catch (Exception e) {
-            System.err.println("Erreur API ORS pour " + profile + ": " + e.getMessage());
+            logger.error("Erreur API ORS pour {} : {}", profile, e.getMessage());
             medecins.forEach(m -> {
                 Map<String, Object> mMetrics = metrics.get(m);
                 if (distanceKey != null) {
@@ -248,8 +249,15 @@ public class MedecinService {
         return R * c;
     }
 
+    @Transactional
+    public Medecin saveMedecin(Medecin medecin) {
+        String rawPassword = generateRandomPassword();
+        String encodedPassword = passwordEncoder.encode(rawPassword);
+        medecin.getUtilisateur().setMotDePasse(encodedPassword);
+        return medecinRepository.save(medecin);
+    }
 
-
+    @Transactional
     public Medecin addMedecin(Medecin medecin) {
         if (medecin.getUtilisateur() == null) {
             throw new IllegalArgumentException("Un médecin doit avoir un compte utilisateur associé.");
@@ -262,50 +270,50 @@ public class MedecinService {
             throw new RuntimeException("Cet email est déjà utilisé !");
         }
 
-        // 🔹 Gestion utilisateur
+        // Gestion utilisateur
         utilisateur.setRole(Role.MEDECIN);
         utilisateur.setMotDePasse(passwordEncoder.encode(utilisateur.getMotDePasse()));
         Utilisateur savedUser = utilisateurRepository.save(utilisateur);
         medecin.setUtilisateur(savedUser);
 
-        // 🔹 Gestion ville
+        // Gestion ville
         Ville ville = medecin.getVille();
         if (ville != null) {
-            // Vérifie si la ville existe déjà
-            Ville existingVille = villeRepository.findByNomIgnoreCase(ville.getNom())
-                    .orElse(null);
-
+            Ville existingVille = villeRepository.findByNomIgnoreCase(ville.getNom()).orElse(null);
             if (existingVille == null) {
-                // Si la ville n’existe pas → géocode et enregistre
-                double[] coords = geocodingService.geocode(ville.getNom());
-                ville.setLat(coords[0]);
-                ville.setLng(coords[1]);
-                existingVille = villeRepository.save(ville);
+                try {
+                    double[] coords = geocodingService.geocode(ville.getNom());
+                    ville.setLat(coords[0]);
+                    ville.setLng(coords[1]);
+                    existingVille = villeRepository.save(ville);
+                } catch (Exception e) {
+                    logger.error("Erreur lors du géocodage de {} : {}", ville.getNom(), e.getMessage());
+                    throw new RuntimeException("Échec du géocodage de la ville : " + ville.getNom(), e);
+                }
             }
             medecin.setVille(existingVille);
         }
+
+        // Gestion disponibilités
         if (medecin.getDisponibilites() != null) {
             medecin.getDisponibilites().forEach(d -> d.setMedecin(medecin));
         }
 
-        // 🔹 Gestion spécialité
+        // Gestion spécialité
         Specialite specialite = medecin.getSpecialite();
-        if (specialite != null) {
+        if (specialite != null && specialite.getId() != null) {
             Specialite existingSpec = specialiteRepository.findById(specialite.getId())
                     .orElseThrow(() -> new RuntimeException("Spécialité introuvable !"));
             medecin.setSpecialite(existingSpec);
+        } else {
+            throw new IllegalArgumentException("Une spécialité valide avec un ID est requise.");
         }
 
-
-        Medecin saved = medecinRepository.save(medecin);
-        Medecin reloaded = medecinRepository.findById(saved.getId()).orElseThrow();
-        return new ResponseEntity<>(reloaded, HttpStatus.CREATED).getBody();
-
+        return medecinRepository.save(medecin);
     }
 
-
     private String generateRandomPassword() {
-        return "medcin123";
+        return RandomStringUtils.randomAlphanumeric(12); // Generate a 12-character random password
     }
 
     public List<Medecin> getAll() {
@@ -319,5 +327,4 @@ public class MedecinService {
     public Optional<Medecin> getMedecinByUtilisateurId(Long userId) {
         return medecinRepository.findByUtilisateurId(userId);
     }
-
 }
