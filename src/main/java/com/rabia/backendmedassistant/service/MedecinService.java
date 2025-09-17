@@ -251,7 +251,7 @@ public class MedecinService {
     public Medecin saveMedecin(Medecin medecin) {
         String rawPassword = generateRandomPassword();
         String encodedPassword = passwordEncoder.encode(rawPassword);
-        medecin.setMotDePasse(encodedPassword);
+        medecin.getUtilisateur().setMotDePasse(encodedPassword); // Corrected to set password on Utilisateur
         return medecinRepository.save(medecin);
     }
 
