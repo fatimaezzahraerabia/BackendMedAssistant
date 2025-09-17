@@ -1,5 +1,6 @@
 package com.rabia.backendmedassistant.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -34,6 +35,7 @@ public class Utilisateur {
 
   
     @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference // 🚀 permet la sérialisation contrôlée
     private List<RendezVous> rendezVous;
 
     public Long getId() {

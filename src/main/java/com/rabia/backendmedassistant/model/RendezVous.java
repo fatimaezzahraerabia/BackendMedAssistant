@@ -1,5 +1,6 @@
 package com.rabia.backendmedassistant.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -12,17 +13,19 @@ public class RendezVous {
     private Long id;
 
     private LocalDate date;
-    private LocalTime heure;
-    private String statut; 
+    private LocalTime heureDebut;
+    private LocalTime heureFin;
+    private String statut;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "utilisateur_id")
+    @JsonBackReference  // 🚀 empêche la boucle infinie
     private Utilisateur utilisateur;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "medecin_id")
+    @JsonBackReference
     private Medecin medecin;
-
 
     public Long getId() {
         return id;
@@ -40,12 +43,20 @@ public class RendezVous {
         this.date = date;
     }
 
-    public LocalTime getHeure() {
-        return heure;
+    public LocalTime getHeureDebut() {
+        return heureDebut;
     }
 
-    public void setHeure(LocalTime heure) {
-        this.heure = heure;
+    public void setHeureDebut(LocalTime heureDebut) {
+        this.heureDebut = heureDebut;
+    }
+
+    public LocalTime getHeureFin() {
+        return heureFin;
+    }
+
+    public void setHeureFin(LocalTime heureFin) {
+        this.heureFin = heureFin;
     }
 
     public String getStatut() {
@@ -71,6 +82,4 @@ public class RendezVous {
     public void setMedecin(Medecin medecin) {
         this.medecin = medecin;
     }
-
-   
 }
