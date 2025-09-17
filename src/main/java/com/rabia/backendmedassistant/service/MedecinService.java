@@ -1,20 +1,16 @@
 package com.rabia.backendmedassistant.service;
 
+import aj.org.objectweb.asm.commons.Remapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rabia.backendmedassistant.model.Medecin;
-import com.rabia.backendmedassistant.model.Role;
-import com.rabia.backendmedassistant.model.Utilisateur;
-import com.rabia.backendmedassistant.model.Ville;
+import com.rabia.backendmedassistant.model.*;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
+import com.rabia.backendmedassistant.repository.SpecialiteRepository;
 import com.rabia.backendmedassistant.repository.UtilisateurRepository;
 import com.rabia.backendmedassistant.repository.VilleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -28,6 +24,7 @@ import java.util.stream.Collectors;
 public class MedecinService {
 
     private final MedecinRepository medecinRepository;
+    private final SpecialiteRepository specialiteRepository;
     private final UtilisateurRepository utilisateurRepository;
     private final VilleRepository villeRepository;
     private final PasswordEncoder passwordEncoder;
@@ -41,13 +38,16 @@ public class MedecinService {
     private GeocodingService geocodingService;
 
     @Autowired
-    public MedecinService(MedecinRepository medecinRepository,
+    public MedecinService(MedecinRepository medecinRepository, SpecialiteRepository specialiteRepository,
                           UtilisateurRepository utilisateurRepository,
                           VilleRepository villeRepository,
+                          GeocodingService geocodingService,
                           PasswordEncoder passwordEncoder) {
         this.medecinRepository = medecinRepository;
+        this.specialiteRepository = specialiteRepository;
         this.utilisateurRepository = utilisateurRepository;
         this.villeRepository = villeRepository;
+        this.geocodingService = geocodingService;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -256,14 +256,53 @@ public class MedecinService {
         }
 
         Utilisateur utilisateur = medecin.getUtilisateur();
+
+        // Vérifier si l'email existe déjà
+        if (utilisateurRepository.existsByEmail(utilisateur.getEmail())) {
+            throw new RuntimeException("Cet email est déjà utilisé !");
+        }
+
+        // 🔹 Gestion utilisateur
         utilisateur.setRole(Role.MEDECIN);
         utilisateur.setMotDePasse(passwordEncoder.encode(utilisateur.getMotDePasse()));
-
         Utilisateur savedUser = utilisateurRepository.save(utilisateur);
-
         medecin.setUtilisateur(savedUser);
-        return medecinRepository.save(medecin);
+
+        // 🔹 Gestion ville
+        Ville ville = medecin.getVille();
+        if (ville != null) {
+            // Vérifie si la ville existe déjà
+            Ville existingVille = villeRepository.findByNomIgnoreCase(ville.getNom())
+                    .orElse(null);
+
+            if (existingVille == null) {
+                // Si la ville n’existe pas → géocode et enregistre
+                double[] coords = geocodingService.geocode(ville.getNom());
+                ville.setLat(coords[0]);
+                ville.setLng(coords[1]);
+                existingVille = villeRepository.save(ville);
+            }
+            medecin.setVille(existingVille);
+        }
+        if (medecin.getDisponibilites() != null) {
+            medecin.getDisponibilites().forEach(d -> d.setMedecin(medecin));
+        }
+
+        // 🔹 Gestion spécialité
+        Specialite specialite = medecin.getSpecialite();
+        if (specialite != null) {
+            Specialite existingSpec = specialiteRepository.findById(specialite.getId())
+                    .orElseThrow(() -> new RuntimeException("Spécialité introuvable !"));
+            medecin.setSpecialite(existingSpec);
+        }
+
+
+        Medecin saved = medecinRepository.save(medecin);
+        Medecin reloaded = medecinRepository.findById(saved.getId()).orElseThrow();
+        return new ResponseEntity<>(reloaded, HttpStatus.CREATED).getBody();
+
     }
+
 
     private String generateRandomPassword() {
         return "medcin123";
@@ -276,4 +315,9 @@ public class MedecinService {
     public Optional<Medecin> getMedecinById(Long id) {
         return medecinRepository.findById(id);
     }
+
+    public Optional<Medecin> getMedecinByUtilisateurId(Long userId) {
+        return medecinRepository.findByUtilisateurId(userId);
+    }
+
 }
