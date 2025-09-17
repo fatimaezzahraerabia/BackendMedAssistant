@@ -1,6 +1,8 @@
 package com.rabia.backendmedassistant.config;
 
 import com.opencsv.CSVReader;
+import java.io.FileReader;
+
 import com.rabia.backendmedassistant.model.Medecin;
 import com.rabia.backendmedassistant.model.Role;
 import com.rabia.backendmedassistant.model.Specialite;
@@ -40,6 +42,11 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        if (medecinRepository.count() > 0) {
+            System.out.println("La base de données des médecins est déjà initialisée.");
+            return;
+        }
+
         try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
             String[] line;
             boolean isHeader = true;
@@ -90,25 +97,44 @@ public class DataInitializer implements CommandLineRunner {
                 // Création utilisateur
                 String email = "med" + counter + "@gmail.com";
                 String motDePasseClair = "password123";
-                Utilisateur utilisateur = new Utilisateur();
-                utilisateur.setEmail(email);
-                utilisateur.setMotDePasse(encoder.encode(motDePasseClair));
-                utilisateur.setRole(Role.MEDECIN);
-                utilisateurRepository.save(utilisateur);
+                Utilisateur utilisateur; // Declare utilisateur here
+
+                // Check if user already exists before saving
+                if (!utilisateurRepository.existsByEmail(email)) {
+                    utilisateur = new Utilisateur(); // Initialize if not exists
+                    utilisateur.setEmail(email);
+                    utilisateur.setMotDePasse(encoder.encode(motDePasseClair));
+                    utilisateur.setRole(Role.MEDECIN);
+                    utilisateur = utilisateurRepository.save(utilisateur); // Save and get the persisted object with ID
+                    System.out.println("✅ Utilisateur créé : " + email + " (ID: " + utilisateur.getId() + ")");
+                } else {
+                    // If user exists, retrieve it to link with Medecin
+                    utilisateur = utilisateurRepository.findByEmail(email).orElse(null);
+                    if (utilisateur == null) { // Should not happen if existsByEmail is true, but for safety
+                        System.err.println("Error: User with email " + email + " reported to exist but could not be retrieved.");
+                        continue; // Skip this iteration if user retrieval fails
+                    }
+                    System.out.println("ℹ️ Utilisateur existe déjà : " + email + " (ID: " + utilisateur.getId() + ")");
+                }
 
                 // Création médecin
-                Medecin medecin = new Medecin();
-                medecin.setNom(nom);
-                medecin.setPrenom(prenom);
-                medecin.setAdresseCabinet(adresse);
-                medecin.setLat(lat);
-                medecin.setLng(lng);
-                medecin.setSpecialite(sp);
-                medecin.setVille(ville);
-                medecin.setUtilisateur(utilisateur); // Lien avec utilisateur
+                // Ensure utilisateur is not null before proceeding
+                if (utilisateur != null) {
+                    Medecin medecin = new Medecin();
+                    medecin.setNom(nom);
+                    medecin.setPrenom(prenom);
+                    medecin.setAdresseCabinet(adresse);
+                    medecin.setLat(lat);
+                    medecin.setLng(lng);
+                    medecin.setSpecialite(sp);
+                    medecin.setVille(ville);
+                    medecin.setUtilisateur(utilisateur); // Lien avec utilisateur
 
-                medecinRepository.save(medecin);
-                System.out.println("✅ Médecin " + nom + " créé avec email: " + email + " / mot de passe: " + motDePasseClair);
+                    medecinRepository.save(medecin);
+                    System.out.println("✅ Médecin " + nom + " créé avec email: " + email + " / mot de passe: " + motDePasseClair);
+                } else {
+                    System.err.println("Skipping Medecin creation for " + nom + " " + prenom + " due to missing utilisateur.");
+                }
 
                 counter++;
             }
