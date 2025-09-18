@@ -51,6 +51,7 @@ public class MedecinController {
         try {
             Medecin savedMedecin = medecinService.addMedecin(medecin);
             return new ResponseEntity<>(savedMedecin, HttpStatus.CREATED);
+
         } catch (IllegalArgumentException e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -94,4 +95,11 @@ public class MedecinController {
                 .map(medecin -> new ResponseEntity<>(medecin, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+    @GetMapping("/utilisateur/{userId}")
+    public ResponseEntity<Medecin> getMedecinByUserId(@PathVariable Long userId) {
+        return medecinService.getMedecinByUtilisateurId(userId)
+                .map(medecin -> new ResponseEntity<>(medecin, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
 }

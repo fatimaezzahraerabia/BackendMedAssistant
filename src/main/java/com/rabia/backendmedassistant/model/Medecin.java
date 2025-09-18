@@ -2,9 +2,11 @@ package com.rabia.backendmedassistant.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,18 +37,30 @@ public class Medecin {
     @JsonIgnoreProperties("medecins")
     private Specialite specialite;
 
+    @OneToMany(mappedBy = "medecin", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Disponibilite> disponibilites = new ArrayList<>();
+
+    public RendezVous getRendezVous() {
+        return rendezVous;
+    }
+
+    public void setRendezVous(RendezVous rendezVous) {
+        this.rendezVous = rendezVous;
+    }
+
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("medecins")
+    private RendezVous rendezVous;
+
+
 
 
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ville_id", nullable = false)
     private Ville ville;
-
-    @ElementCollection
-    @CollectionTable(name = "medecin_disponibilites", joinColumns = @JoinColumn(name = "medecin_id"))
-    @MapKeyColumn(name = "disponibilite_date")
-    @Column(name = "disponibilite_horaires")
-    private Map<LocalDate, List<String>> disponibilites;
     @OneToOne
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateur; //
@@ -192,13 +206,7 @@ public class Medecin {
         this.specialite = specialite;
     }
 
-    public Map<LocalDate, List<String>> getDisponibilites() {
-        return disponibilites;
-    }
 
-    public void setDisponibilites(Map<LocalDate, List<String>> disponibilites) {
-        this.disponibilites = disponibilites;
-    }
 
 
     public void setUtilisateur(Utilisateur savedUser) {
@@ -217,5 +225,13 @@ public class Medecin {
 
     public void setVille(Ville ville) {
         this.ville = ville;
+    }
+
+    public List<Disponibilite> getDisponibilites() {
+        return disponibilites;
+    }
+
+    public void setDisponibilites(List<Disponibilite> disponibilites) {
+        this.disponibilites = disponibilites;
     }
 }

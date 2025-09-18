@@ -248,12 +248,16 @@ public class MedecinService {
         return R * c;
     }
 
+<<<<<<<<< Temporary merge branch 1
+
+=========
     public Medecin saveMedecin(Medecin medecin) {
         String rawPassword = generateRandomPassword();
         String encodedPassword = passwordEncoder.encode(rawPassword);
-        medecin.setMotDePasse(encodedPassword);
+        medecin.getUtilisateur().setMotDePasse(encodedPassword); // Corrected to set password on Utilisateur
         return medecinRepository.save(medecin);
     }
+>>>>>>>>> Temporary merge branch 2
 
     public Medecin addMedecin(Medecin medecin) {
         if (medecin.getUtilisateur() == null) {
