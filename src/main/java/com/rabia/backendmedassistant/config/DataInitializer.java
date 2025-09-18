@@ -1,7 +1,8 @@
 package com.rabia.backendmedassistant.config;
 
 import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
+import java.io.FileReader;
+
 import com.rabia.backendmedassistant.model.Medecin;
 import com.rabia.backendmedassistant.model.Role;
 import com.rabia.backendmedassistant.model.Specialite;
@@ -12,75 +13,49 @@ import com.rabia.backendmedassistant.repository.SpecialiteRepository;
 import com.rabia.backendmedassistant.repository.UtilisateurRepository;
 import com.rabia.backendmedassistant.repository.VilleRepository;
 import com.rabia.backendmedassistant.service.GeocodingService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
+import java.io.FileReader;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
-
-    private static final Logger logger = LoggerFactory.getLogger(DataInitializer.class);
 
     private final MedecinRepository medecinRepository;
     private final UtilisateurRepository utilisateurRepository;
     private final SpecialiteRepository specialiteRepository;
     private final VilleRepository villeRepository;
     private final GeocodingService geocodingService;
-    private final BCryptPasswordEncoder encoder;
-    private final ResourceLoader resourceLoader;
+    private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    int counter = 1;
 
     @Autowired
     public DataInitializer(MedecinRepository medecinRepository, UtilisateurRepository utilisateurRepository,
                            SpecialiteRepository specialiteRepository, VilleRepository villeRepository,
-                           GeocodingService geocodingService, ResourceLoader resourceLoader,
-                           BCryptPasswordEncoder encoder) {
+                           GeocodingService geocodingService) {
         this.medecinRepository = medecinRepository;
         this.utilisateurRepository = utilisateurRepository;
         this.specialiteRepository = specialiteRepository;
         this.villeRepository = villeRepository;
         this.geocodingService = geocodingService;
-        this.resourceLoader = resourceLoader;
-        this.encoder = encoder;
     }
 
     @Override
-    @Transactional
     public void run(String... args) throws Exception {
         if (medecinRepository.count() > 0) {
-            logger.info("La base de données des médecins est déjà initialisée.");
+            System.out.println("La base de données des médecins est déjà initialisée.");
             return;
         }
 
-        Resource resource = resourceLoader.getResource("classpath:dataset_medecins_final.csv");
-        if (!resource.exists()) {
-            logger.error("Fichier CSV introuvable : dataset_medecins_final.csv");
-            throw new FileNotFoundException("Fichier CSV introuvable : dataset_medecins_final.csv");
-        }
-
-        try (CSVReader reader = new CSVReader(new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8))) {
+        try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
             String[] line;
             boolean isHeader = true;
-            int counter = 1;
 
             while ((line = reader.readNext()) != null) {
                 if (isHeader) {
                     isHeader = false;
-                    continue;
-                }
-
-                // Validate CSV line length
-                if (line.length < 7) {
-                    logger.warn("Ligne CSV incomplète, ignorée : {}", String.join(",", line));
                     continue;
                 }
 
@@ -96,7 +71,7 @@ public class DataInitializer implements CommandLineRunner {
                     lat = Double.parseDouble(line[4]);
                     lng = Double.parseDouble(line[5]);
                 } catch (NumberFormatException e) {
-                    logger.warn("Coordonnées invalides pour {} {} : {}", nom, prenom, e.getMessage());
+                    System.out.println("⚠ Coordonnées invalides pour " + nom + " " + prenom);
                 }
 
                 // Gestion ville
@@ -104,16 +79,13 @@ public class DataInitializer implements CommandLineRunner {
                 if (ville == null) {
                     ville = new Ville();
                     ville.setNom(villeNom);
-                    try {
-                        double[] coords = geocodingService.geocode(villeNom);
-                        ville.setLat(coords[0]);
-                        ville.setLng(coords[1]);
-                        villeRepository.save(ville);
-                        logger.info("Ville ajoutée : {} ({}, {})", villeNom, coords[0], coords[1]);
-                    } catch (Exception e) {
-                        logger.error("Erreur lors du géocodage de {} : {}", villeNom, e.getMessage());
-                        continue;
-                    }
+
+                    double[] coords = geocodingService.geocode(villeNom);
+                    ville.setLat(coords[0]);
+                    ville.setLng(coords[1]);
+
+                    villeRepository.save(ville);
+                    System.out.println("✅ Ville ajoutée : " + villeNom + " (" + coords[0] + ", " + coords[1] + ")");
                 }
 
                 // Gestion spécialité
@@ -122,31 +94,33 @@ public class DataInitializer implements CommandLineRunner {
                     sp = new Specialite();
                     sp.setNom(specialiteNom);
                     specialiteRepository.save(sp);
-                    logger.info("Spécialité ajoutée : {}", specialiteNom);
                 }
 
                 // Création utilisateur
                 String email = "med" + counter + "@gmail.com";
-                String motDePasseClair = "password123"; // Consider a more secure approach
-                Utilisateur utilisateur;
+                String motDePasseClair = "password123";
+                Utilisateur utilisateur; // Declare utilisateur here
 
+                // Check if user already exists before saving
                 if (!utilisateurRepository.existsByEmail(email)) {
-                    utilisateur = new Utilisateur();
+                    utilisateur = new Utilisateur(); // Initialize if not exists
                     utilisateur.setEmail(email);
                     utilisateur.setMotDePasse(encoder.encode(motDePasseClair));
                     utilisateur.setRole(Role.MEDECIN);
-                    utilisateur = utilisateurRepository.save(utilisateur);
-                    logger.info("Utilisateur créé : {} (ID: {})", email, utilisateur.getId());
+                    utilisateur = utilisateurRepository.save(utilisateur); // Save and get the persisted object with ID
+                    System.out.println("✅ Utilisateur créé : " + email + " (ID: " + utilisateur.getId() + ")");
                 } else {
+                    // If user exists, retrieve it to link with Medecin
                     utilisateur = utilisateurRepository.findByEmail(email).orElse(null);
-                    if (utilisateur == null) {
-                        logger.error("Utilisateur avec email {} existe mais introuvable.", email);
-                        continue;
+                    if (utilisateur == null) { // Should not happen if existsByEmail is true, but for safety
+                        System.err.println("Error: User with email " + email + " reported to exist but could not be retrieved.");
+                        continue; // Skip this iteration if user retrieval fails
                     }
-                    logger.info("Utilisateur existe déjà : {} (ID: {})", email, utilisateur.getId());
+                    System.out.println("ℹ️ Utilisateur existe déjà : " + email + " (ID: " + utilisateur.getId() + ")");
                 }
 
                 // Création médecin
+                // Ensure utilisateur is not null before proceeding
                 if (utilisateur != null) {
                     Medecin medecin = new Medecin();
                     medecin.setNom(nom);
@@ -156,22 +130,18 @@ public class DataInitializer implements CommandLineRunner {
                     medecin.setLng(lng);
                     medecin.setSpecialite(sp);
                     medecin.setVille(ville);
-                    medecin.setUtilisateur(utilisateur);
+                    medecin.setUtilisateur(utilisateur); // Lien avec utilisateur
 
                     medecinRepository.save(medecin);
-                    logger.info("Médecin {} {} créé avec email: {}", nom, prenom, email);
+                    System.out.println("✅ Médecin " + nom + " créé avec email: " + email + " / mot de passe: " + motDePasseClair);
                 } else {
-                    logger.error("Échec de la création du médecin {} {} : utilisateur manquant.", nom, prenom);
+                    System.err.println("Skipping Medecin creation for " + nom + " " + prenom + " due to missing utilisateur.");
                 }
 
                 counter++;
             }
-        } catch (CsvValidationException e) {
-            logger.error("Erreur de validation CSV : {}", e.getMessage());
-            throw e;
         } catch (Exception e) {
-            logger.error("Erreur lors de l'initialisation des données : {}", e.getMessage());
-            throw e;
+            e.printStackTrace();
         }
     }
 }
