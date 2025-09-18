@@ -248,7 +248,12 @@ public class MedecinService {
         return R * c;
     }
 
-
+    public Medecin saveMedecin(Medecin medecin) {
+        String rawPassword = generateRandomPassword();
+        String encodedPassword = passwordEncoder.encode(rawPassword);
+        medecin.setMotDePasse(encodedPassword);
+        return medecinRepository.save(medecin);
+    }
 
     public Medecin addMedecin(Medecin medecin) {
         if (medecin.getUtilisateur() == null) {
