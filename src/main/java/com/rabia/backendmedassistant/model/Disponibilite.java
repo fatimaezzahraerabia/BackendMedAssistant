@@ -1,6 +1,5 @@
 package com.rabia.backendmedassistant.model;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -44,4 +43,3 @@ public class Disponibilite {
     public Medecin getMedecin() { return medecin; }
     public void setMedecin(Medecin medecin) { this.medecin = medecin; }
 }
-
