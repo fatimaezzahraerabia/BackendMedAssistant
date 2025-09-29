@@ -82,4 +82,9 @@ public class RendezVous {
     public void setMedecin(Medecin medecin) {
         this.medecin = medecin;
     }
+
+    public void setPatient(Utilisateur patient) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setPatient'");
+    }
 }

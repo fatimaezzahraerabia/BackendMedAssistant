@@ -49,7 +49,7 @@ public class DataInitializer implements CommandLineRunner {
             return;
         }
 
-        try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
+   /*      try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/dataset_medecins_final.csv"))) {
             String[] line;
             boolean isHeader = true;
 
@@ -142,6 +142,6 @@ public class DataInitializer implements CommandLineRunner {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }   */
     }
 }

@@ -45,19 +45,32 @@ public class RendezVousChatbotService {
                                                   Utilisateur utilisateur, Medecin medecin) {
         try {
             LocalDate rdvDate = LocalDate.parse(date);
-            LocalTime rdvHeureDebut = LocalTime.parse(heureDebut);
-            LocalTime rdvHeureFin = LocalTime.parse(heureFin);
 
+            // Vérifier d'abord la disponibilité du jour
             List<Disponibilite> disponibilites = rendezVousService.getDisponibilitesLibres(medecinId, rdvDate);
+            if (disponibilites.isEmpty()) {
+                String message = "Bonjour ! Il n'y a malheureusement aucun créneau disponible ce jour-là. Pourriez-vous choisir une autre date ?";
+                return new RendezVousResponse(message, null);
+            }
 
+            // Si l'heure est fournie, parser et vérifier le créneau
+            LocalTime rdvHeureDebut;
+            LocalTime rdvHeureFin;
+            try {
+                rdvHeureDebut = LocalTime.parse(heureDebut);
+                rdvHeureFin = LocalTime.parse(heureFin);
+            } catch (Exception e) {
+                return new RendezVousResponse("Format d'heure invalide. Veuillez utiliser HH:MM.", null);
+            }
+
+            // Générer la réponse finale
             String reponseBrute = genererReponse(patientId, medecinId, rdvDate, rdvHeureDebut, rdvHeureFin, confirmer, utilisateur, medecin, disponibilites);
 
             String message = geminiService.generateResponse(
-                    "Reformule ce message pour un patient de manière polie et naturelle : " + reponseBrute
+                    "Reformule ce message en une seule version polie et naturelle pour communiquer avec un patient : " + reponseBrute
             );
 
-            // Si la réponse indique une confirmation, récupérer le dernier rendez-vous créé
-            RendezVous rdv = reponseBrute.contains("✅") ? rendezVousRepository.findTopByOrderByIdDesc().orElse(null) : null;
+            RendezVous rdv = reponseBrute.contains("confirmé") ? rendezVousRepository.findTopByOrderByIdDesc().orElse(null) : null;
 
             return new RendezVousResponse(message, rdv);
         } catch (Exception e) {
@@ -70,6 +83,7 @@ public class RendezVousChatbotService {
                                   LocalDate rdvDate, LocalTime rdvHeureDebut, LocalTime rdvHeureFin, boolean confirmer,
                                   Utilisateur utilisateur, Medecin medecin,
                                   List<Disponibilite> disponibilites) {
+
         logger.info("Vérification disponibilité pour médecin {}, date {}, heureDebut {}, heureFin {}",
                 medecinId, rdvDate, rdvHeureDebut, rdvHeureFin);
 
@@ -77,39 +91,35 @@ public class RendezVousChatbotService {
         boolean estDisponible = disponibilites.stream()
                 .anyMatch(d -> !rdvHeureDebut.isBefore(d.getHeureDebut()) && !rdvHeureFin.isAfter(d.getHeureFin()));
 
-        if (estDisponible) {
-            // Vérifier s'il y a un chevauchement avec un rendez-vous existant
-            List<RendezVous> existingRdvs = rendezVousRepository.findByMedecinIdAndDate(medecinId, rdvDate);
-            boolean hasOverlap = existingRdvs.stream()
-                    .anyMatch(rdv ->
-                            !(rdvHeureFin.isBefore(rdv.getHeureDebut()) || rdvHeureDebut.isAfter(rdv.getHeureFin()))
-                    );
-
-            if (hasOverlap) {
-                logger.info("Chevauchement détecté pour le créneau demandé.");
-                return "⛔ Le créneau demandé est déjà occupé. Voici des alternatives : "
-                        + formaterAlternatives(disponibilites);
-            }
-
-            if (confirmer) {
-                try {
-                    rendezVousService.reserverRendezVous(patientId, medecinId, rdvDate, rdvHeureDebut, rdvHeureFin, utilisateur, medecin);
-                    return "✅ Votre rendez-vous est confirmé le " + rdvDate + " de " + rdvHeureDebut + " à " + rdvHeureFin;
-                } catch (RuntimeException e) {
-                    logger.error("Erreur lors de la réservation : {}", e.getMessage());
-                    return "⛔ Une erreur s'est produite lors de la confirmation du rendez-vous : " + e.getMessage();
-                }
-            }
-            return "Le créneau de " + rdvHeureDebut + " à " + rdvHeureFin + " est disponible. Voulez-vous confirmer ce rendez-vous ?";
+        if (!estDisponible) {
+            return "Ce créneau n'est pas disponible. Voici des alternatives : " + formaterAlternatives(disponibilites);
         }
 
-        if (!disponibilites.isEmpty()) {
-            return "⛔ Le créneau demandé n'est pas disponible. Voici des alternatives : "
-                    + formaterAlternatives(disponibilites);
+        // Vérifier chevauchement avec rendez-vous existants
+        List<RendezVous> existingRdvs = rendezVousRepository.findByMedecinIdAndDate(medecinId, rdvDate);
+        boolean hasOverlap = existingRdvs.stream()
+                .anyMatch(rdv -> !(rdvHeureFin.isBefore(rdv.getHeureDebut()) || rdvHeureDebut.isAfter(rdv.getHeureFin())));
+
+        if (hasOverlap) {
+            return "Ce créneau est déjà réservé. Voici des alternatives : " + formaterAlternatives(disponibilites);
         }
 
-        logger.info("Aucune disponibilité trouvée pour médecin {}, date {}", medecinId, rdvDate);
-        return "❌ Aucune disponibilité trouvée pour ce jour. Veuillez choisir un autre jour.";
+        // Confirmer le rendez-vous si demandé
+        if (confirmer) {
+            try {
+                rendezVousService.reserverRendezVous(patientId, medecinId, rdvDate, rdvHeureDebut, rdvHeureFin, utilisateur, medecin);
+                // Utiliser le nom du patient si disponible
+                String nomPatient = utilisateur.getNom() != null ? utilisateur.getNom() : "Patient";
+                return "Bonjour " + nomPatient + ", votre rendez-vous est confirmé pour le " 
+                       + rdvDate + " de " + rdvHeureDebut + " à " + rdvHeureFin + ". À bientôt !";
+            } catch (RuntimeException e) {
+                logger.error("Erreur lors de la réservation : {}", e.getMessage());
+                return "Une erreur s'est produite lors de la confirmation du rendez-vous : " + e.getMessage();
+            }
+        }
+        
+
+        return "Le créneau de " + rdvHeureDebut + " à " + rdvHeureFin + " est disponible. Voulez-vous confirmer ce rendez-vous ? (oui/non)";
     }
 
     private String formaterAlternatives(List<Disponibilite> disponibilites) {

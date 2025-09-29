@@ -1,8 +1,10 @@
 package com.rabia.backendmedassistant.controller;
 
+import com.rabia.backendmedassistant.dto.AddDisponibiliteRequest;
+import com.rabia.backendmedassistant.model.Disponibilite;
 import com.rabia.backendmedassistant.model.Medecin;
-import com.rabia.backendmedassistant.model.Utilisateur;
 import com.rabia.backendmedassistant.model.Ville;
+import com.rabia.backendmedassistant.repository.DisponibiliteRepository;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
 import com.rabia.backendmedassistant.repository.UtilisateurRepository;
 import com.rabia.backendmedassistant.service.GeocodingService;
@@ -12,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @RestController
@@ -23,6 +27,9 @@ public class MedecinController {
 
     @Autowired
     private MedecinRepository medecinRepository;
+
+    @Autowired
+    private DisponibiliteRepository disponibiliteRepository;
 
     @Autowired
     private final UtilisateurRepository utilisateurRepository;
@@ -101,5 +108,9 @@ public class MedecinController {
                 .map(medecin -> new ResponseEntity<>(medecin, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+    // 🔹 Nouvel endpoint pour ajouter des disponibilités
+
+
 
 }

@@ -16,18 +16,18 @@ public class UtilisateurDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Utilisateur utilisateur = null;
-        try {
-            utilisateur = (Utilisateur) utilisateurRepository.findByEmail(email)
-                    .orElseThrow(() -> new UsernameNotFoundException("Utilisateur non trouvé"));
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
-
+        System.out.println("🔍 Tentative de login avec email : " + email);
+    
+        Utilisateur utilisateur = utilisateurRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("Utilisateur non trouvé : " + email));
+    
+        System.out.println("✅ Utilisateur trouvé : " + utilisateur.getEmail() + " - Role: " + utilisateur.getRole());
+    
         return User.builder()
                 .username(utilisateur.getEmail())
                 .password(utilisateur.getMotDePasse())
                 .roles(utilisateur.getRole().name())
                 .build();
     }
+    
 }

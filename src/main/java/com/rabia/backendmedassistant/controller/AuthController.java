@@ -1,6 +1,8 @@
 package com.rabia.backendmedassistant.controller;
 
+import com.rabia.backendmedassistant.dto.AdminRegistrationDTO;
 import com.rabia.backendmedassistant.dto.LoginRequest;
+import com.rabia.backendmedassistant.dto.PatientRegistrationDTO;
 import com.rabia.backendmedassistant.model.Medecin;
 import com.rabia.backendmedassistant.model.Utilisateur;
 import com.rabia.backendmedassistant.repository.MedecinRepository;
@@ -51,14 +53,18 @@ import com.rabia.backendmedassistant.model.Role; // Ajouter cet import
             }
         }
     // Register
-    @PostMapping("/register-patient")
-    public ResponseEntity<?> registerPatient(@RequestBody Utilisateur utilisateur) {
+    @PostMapping(value = "/register-patient", produces = "application/json")
+    public ResponseEntity<?> registerPatient(@RequestBody PatientRegistrationDTO dto) {
         try {
-            if (utilisateurRepository.findByEmail(utilisateur.getEmail()).isPresent()) {
+            if (utilisateurRepository.findByEmail(dto.getEmail()).isPresent()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erreur : Cet email est déjà utilisé.");
             }
-            utilisateur.setRole(Role.PATIENT); // Forcer le rôle PATIENT
-            utilisateur.setMotDePasse(passwordEncoder.encode(utilisateur.getMotDePasse()));
+            Utilisateur utilisateur = new Utilisateur();
+            utilisateur.setNom(dto.getNom());
+            utilisateur.setEmail(dto.getEmail());
+            utilisateur.setTelephone(dto.getTelephone());
+            utilisateur.setMotDePasse(passwordEncoder.encode(dto.getMotDePasse()));
+            utilisateur.setRole(Role.PATIENT);
             Utilisateur savedUtilisateur = utilisateurRepository.save(utilisateur);
             return ResponseEntity.ok(savedUtilisateur);
         } catch (Exception e) {
@@ -66,18 +72,27 @@ import com.rabia.backendmedassistant.model.Role; // Ajouter cet import
         }
     }
 
-    @PostMapping("/register-admin")
-    public ResponseEntity<?> registerAdmin(@RequestBody Utilisateur utilisateur) {
-        try {
-            if (utilisateurRepository.findByEmail(utilisateur.getEmail()).isPresent()) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erreur : Cet email est déjà utilisé.");
-            }
-            utilisateur.setRole(Role.ADMINISTRATEUR);
-            utilisateur.setMotDePasse(passwordEncoder.encode(utilisateur.getMotDePasse()));
-            Utilisateur savedUtilisateur = utilisateurRepository.save(utilisateur);
-            return ResponseEntity.ok(savedUtilisateur);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erreur lors de l'enregistrement : " + e.getMessage());
+   @PostMapping(value = "/register-admin", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<?> registerAdmin(@RequestBody AdminRegistrationDTO dto) {
+    try {
+        if (utilisateurRepository.findByEmail(dto.getEmail()).isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erreur : Cet email est déjà utilisé.");
         }
+
+        Utilisateur utilisateur = new Utilisateur();
+        utilisateur.setNom(dto.getNom());
+        utilisateur.setEmail(dto.getEmail());
+        utilisateur.setTelephone(dto.getTelephone());
+        utilisateur.setMotDePasse(passwordEncoder.encode(dto.getMotDePasse()));
+        utilisateur.setRole(Role.ADMINISTRATEUR);
+
+        Utilisateur savedUtilisateur = utilisateurRepository.save(utilisateur);
+        return ResponseEntity.ok(savedUtilisateur);
+
+    } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                             .body("Erreur lors de l'enregistrement : " + e.getMessage());
     }
+}
+
 }
